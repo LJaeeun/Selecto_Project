@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>SELECTO COFFEE</title>
+
+        <!-- css swiperreset  -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"
+        />
+
+        <!-- reset css -->
+        <link rel="stylesheet" href="./common/reset.css">
+        <link rel="stylesheet" href="./common/swiper-bundle.min.css">
+
+        <!-- fonts -->
+        <link rel="stylesheet" href="./fonts/fonts.css">
+
+        <!-- jquery -->
+        <script src="./common/jquery-3.5.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+        <!-- js swiper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+
+        <!-- 적용 css,js -->
+        <link rel="stylesheet" href="./css/style.css">
+        <script defer src="./js/index.js"></script>
+    </head>
+    <body>
+        <!-- 커스텀 커서 -->
+        <div class="cursor"></div>
+
+        <!-- 모바일 메뉴바 -->
+        <div class="mo_menu">
+            <div class="mo_menu_con">
+                <div class="closeBtn"></div>
+                <div class="flex_menu">
+                    <div class="menu_list">
+                        <div class="menus">
+                            <div class="clickmenu">
+                                <div class="menusTitle">셀렉토커피</div>
+                                <div class="menuArrow"></div>
+                            </div>
+                            <div class="listmenu">
+                                <a href="">브랜드 스토리</a>
+                                <a href="">HISTORY</a>
+                                <a href="">경쟁력</a>
+                                <a href="">ONE FOR ONE</a>
+                            </div>
+                        </div>
+                        <div class="menus">
+                            <div class="clickmenu">
+                                <div class="menusTitle">메뉴</div>
+                                <div class="menuArrow"></div>
+                            </div>
+                            <div class="listmenu">
+                                <a href="">Signature</a>
+                                <a href="">Coffee</a>
+                                <a href="">Cookie</a>
+                                <a href="">Beverage</a>
+                                <a href="">Deli&Dessert</a>
+                                <a href="">MD</a>
+                            </div>
+                        </div>
+                        <div class="menus">
+                            <div class="clickmenu">
+                                <div class="menusTitle">매장안내</div>
+                                <div class="menuArrow"></div>
+                            </div>
+                            <div class="listmenu">
+                                <a href="">매장찾기</a>
+                                <a href="">오픈 예정 매장</a>
+                            </div>
+                        </div>
+                        <div class="menus">
+                            <div class="clickmenu">
+                                <div class="menusTitle">what's new</div>
+                                <div class="menuArrow"></div>
+                            </div>
+                            <div class="listmenu">
+                                <a href="">새로운 소식</a>
+                                <a href="">보도자료</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sns_list">
+                        <a href="" target="_blank">
+                            <img src="./imgs/icon/h-link-naver.svg" alt="naver">
+                        </a>
+                        <a href="" target="_blank">
+                            <img src="./imgs/icon/h-link-youtube.svg" alt="youtube">
+                        </a>
+                        <a href="" target="_blank">
+                            <img src="./imgs/icon/h-link-instagram.svg" alt="instagram">
+                        </a>
+                    </div>
+                    <button class="link_btn">창업안내</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <!-- pc 메뉴바 -->
+            <header id="header">
+                <div class="header_inner">
+                    <!-- logo -->
+                    <h1 class="logo">
+                        <a href="#">
+                            <img src="./imgs/main/logo.png" alt="logo">
+                        </a>
+                    </h1>
+
+                    <!-- pc 메뉴바 -->
+                    <nav class="menu displayNone">
+                        <ul>
+                            <li>
+                                <a href="#">셀렉토커피</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">브랜드 스토리</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">HISTORY</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">경쟁력</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">ONE FOR ONE</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">메뉴</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">Signature</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Coffee</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Cookie</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Beverage</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Deli&Dessert</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">MD</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">매장안내</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">매장찾기</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">오픈 예정 매장</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">what's new</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">새로운 소식</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">보도자료</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- link -->
+                    <div class="link displayNone">
+                        <div class="btn_link">
+                            <a href="#">창업안내</a>
+                        </div>
+                        <div class="sns_link">
+                            <a href="https://www.naver.com/" target="_blank">
+                                <img src="./imgs/icon/h-link-naver.svg" alt="naver">
+                            </a>
+                            <a href="https://www.youtube.com/" target="_blank">
+                                <img src="./imgs/icon/h-link-youtube.svg" alt="youtube">
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank">
+                                <img src="./imgs/icon/h-link-instagram.svg" alt="instagram">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 모바일 햄버거 버튼 -->
+                    <div class="burger mo">
+                        <div class="burger_menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <!-- main 1 -->
+                <div class="mianSwiper" id="main_swiper">
+                    <!-- Swiper -->
+                    <div class="swiper-container swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                    <div class="img">
+                                        <div class="img1">
+                                            <img class="pc displayNone" src="./imgs/slide/pc-1.jpg" alt="">
+                                            <img class="mo" src="./imgs/slide/mo-1.jpg" alt="">
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="swiper-slide">
+                                    <div class="img">
+                                        <div class="img2">
+                                            <img class="pc displayNone" src="./imgs/slide/pc-2.jpg" alt="">
+                                            <img class="mo" src="./imgs/slide/mo-2.jpg" alt="">
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="swiper-slide">
+                                    <div class="img">
+                                        <div class="img3">
+                                            <img class="pc displayNone" src="./imgs/slide/pc-3.jpg" alt="">
+                                            <img class="mo" src="./imgs/slide/mo-3.jpg" alt="">
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="swiper-slide">
+                                    <div class="img">
+                                        <div class="img4">
+                                            <img class="pc displayNone" src="./imgs/slide/pc-4.jpg" alt="">
+                                            <img class="mo" src="./imgs/slide/mo-4.jpg" alt="">
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination mo">
+                        <span>
+                            
+                        </span>
+                    </div>
+                    <div class="scroll_mouse pc displayNone">
+                        <span></span>
+                    </div>
+                    <div class="scroll_info pc displayNone">scroll</div>
+                    <div class="scroll_line pc displayNone"></div>
+                </div>
+                <!-- 모바일 POPup창 -->
+                <div class="mo_popup">
+                    <p class="bgColor"></p>
+                    <div class="popuo_con">
+                        <button class="popupCloseBtn">닫기</button>
+                        <div class="mianSwiper2" id="main_swiper2">
+                            <!-- Swiper -->
+                            <div class="swiper-container" id="swiper2">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="Ylink">
+                                            <a href="https://youtu.be/r6bibJ3wZQI" target="_blank">
+                                                <img src="./imgs/popup/popup1.png" alt="popup1">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="Ylink">
+                                            <a href="https://youtu.be/gGHKuVlTO3M" target="_blank">
+                                                <img src="./imgs/popup/popup2.png" alt="popup2">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="Ylink">
+                                            <a href="https://youtu.be/r6bibJ3wZQI" target="_blank">
+                                                <img src="./imgs/popup/popup1.png" alt="popup1">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="Ylink">
+                                            <a href="https://youtu.be/gGHKuVlTO3M" target="_blank">
+                                                <img src="./imgs/popup/popup2.png" alt="popup2">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination mo"></div>
+                        </div>
+                        <p class="mo_popup_close">오늘 하루 창 열지 않기 <span>닫기</span></p>
+                    </div>
+                </div>
+                <!-- main2 -->
+                <div class="main2_wrap">
+                    <div class="selectoMenu_lefe">
+                        <div class="bgImg">
+                            <p class="bg bg1"></p>
+                            <p class="bg bg2"></p>
+                            <p class="bg bg3"></p>
+                            <p class="bg bg4"></p>
+                        </div>
+                        <div class="main2_Btn">
+                            <h2>selecto menu</h2>
+                            <div class="btn_list">
+                                <button>signature</button>
+                                <button>beverage</button>
+                                <button>coffee</button>
+                                <button>cookie</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="selectoMenu_Right">
+                        <div class="right_inner">
+                            <div class="title">
+                                <div class="text text1">
+                                    <h3>signature</h3>
+                                    <p>셀렉토 감성과 재미를 듬뿍 담아 낸, 셀렉토에서<br>
+                                    맛볼 수 있는 시그니처 음료</p>
+                                </div>
+                                <div class="text text2">
+                                    <h3>beverage</h3>
+                                    <p>고객의 라이프 스타일에 맞춰 더욱 다양하게 즐길<br>수 있는 셀렉토의 음료 라인업!</p>
+                                </div>
+                                <div class="text text3">
+                                    <h3>coffee</h3>
+                                    <p>셀렉토는 품질 좋은 원두를 선별해, 최적의 로스팅 포인트로<br>더욱 섬세하게 균형잡힌 풍미의 커피를 고객에게 선사합니다.</p>
+                                </div>
+                                <div class="text text4">
+                                    <h3>cookie</h3>
+                                    <p>남녀노소, 어디서나 맛있게! 셀렉토 시그니처 수제 쿠키</p>
+                                </div>
+                            </div>
+                            <div class="itemImg">
+                                <div class="imgbox imgbox1">
+                                    <a href="#none">
+                                        <img src="./imgs/menu/c-signature-item-01.png" alt="signature-item-01">
+                                    </a>
+                                    <a href="#none">
+                                        <img src="./imgs/menu/c-signature-item-02-1.png" alt="signature-item-02">
+                                    </a>
+                                    <a href="#none">
+                                        <img src="./imgs/menu/c-signature-item-03-1.png" alt="signature-item-03">
+                                    </a>
+                                </div>
+                                <div class="imgbox imgbox2">
+                                    <a href="#none">
+                                        <img src="./imgs/menu/c-beverage-item-01.png" alt="beverage-item-01">
+                                    </a>
+                                    <a href="#none">
+                                        <img src="./imgs/menu/c-beverage-item-02.png" alt="beverage-item-02">
+                                    </a>
+                                    <a href="#none">
+                                        <img src="./imgs/menu/c-beverage-item-03.png" alt="beverage-item-03">
+                                    </a>
+                                </div>
+                                <div class="imgbox imgbox3">
+                                    <a href="#none">
+                                        <img src="./imgs/menu/c-coffee-item-01.png" alt="coffee-item-01">
+                                    </a>
+                                    <a href="#none">
+                                        <img src="./imgs/menu/c-coffee-item-02.png" alt="coffee-item-02">
+                                    </a>
+                                    <a href="#none">
+                                        <img src="./imgs/menu/c-coffee-item-03.png" alt="coffee-item-03">
+                                    </a>
+                                </div>
+                                <div class="imgbox imgbox4">
+                                    <a href="#none">
+                                        <img src="./imgs/menu/c-cookie-item-01.png" alt="cookie-item-01">
+                                    </a>
+                                    <a href="#none">
+                                        <img src="./imgs/menu/c-cookie-item-02.png" alt="cookie-item-02">
+                                    </a>
+                                    <a href="#none">
+                                        <img src="./imgs/menu/c-cookie-item-03.png" alt="cookie-item-03">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="itemTopping">
+                                <div class="toppingBox">
+                                    <h4>추천 토핑류</h4>
+                                    <div class="topping_con">
+                                        <div class="topping">
+                                            <div class="toppingImg">
+                                                <img src="./imgs/menu/c-topping-01.png" alt="시럽_바닐라빈">
+                                                <p>시럽_바닐라빈</p>
+                                            </div>
+                                            <div class="toppingImg">
+                                                <img src="./imgs/menu/c-topping-02.png" alt="시럽_카라멜">
+                                                <p>시럽_카라멜</p>
+                                            </div>
+                                            <div class="toppingImg">
+                                                <img src="./imgs/menu/c-topping-03.png" alt="우유_오트밀">
+                                                <p>우유_오트밀</p>
+                                            </div>
+                                            <div class="toppingImg">
+                                                <img src="./imgs/menu/c-topping-04.png" alt="크림_흑임자">
+                                                <p>크림_흑임자</p>
+                                            </div>
+                                        </div>
+                                        <div class="topping">
+                                            <div class="toppingImg">
+                                                <img src="./imgs/menu/c-topping-02.png" alt="시럽_카라멜">
+                                                <p>시럽_카라멜</p>
+                                            </div>
+                                            <div class="toppingImg">
+                                                <img src="./imgs/menu/c-topping-03.png" alt="우유_오트밀">
+                                                <p>우유_오트밀</p>
+                                            </div>
+                                            <div class="toppingImg">
+                                                <img src="./imgs/menu/c-topping-04.png" alt="크림_흑임자">
+                                                <p>크림_흑임자</p>
+                                            </div>
+                                        </div>
+                                        <div class="topping">
+                                            <div class="toppingImg">
+                                                <img src="./imgs/menu/c-topping-03.png" alt="우유_오트밀">
+                                                <p>우유_오트밀</p>
+                                            </div>
+                                            <div class="toppingImg">
+                                                <img src="./imgs/menu/c-topping-04.png" alt="크림_흑임자">
+                                                <p>크림_흑임자</p>
+                                            </div>
+                                        </div>
+                                        <div class="topping">
+                                            <div class="toppingImg">
+                                                <img src="./imgs/menu/c-topping-01.png" alt="시럽_바닐라빈">
+                                                <p>시럽_바닐라빈</p>
+                                            </div>
+                                            <div class="toppingImg">
+                                                <img src="./imgs/menu/c-topping-02.png" alt="시럽_카라멜">
+                                                <p>시럽_카라멜</p>
+                                            </div>
+                                            <div class="toppingImg">
+                                                <img src="./imgs/menu/c-topping-03.png" alt="우유_오트밀">
+                                                <p>우유_오트밀</p>
+                                            </div>
+                                            <div class="toppingImg">
+                                                <img src="./imgs/menu/c-topping-04.png" alt="크림_흑임자">
+                                                <p>크림_흑임자</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 가운데 음료 사진 -->
+                    <div class="selectoMenu_center displayNone">
+                        <p class="centerImg">
+                            <img src="./imgs/menu/c-signature-item-00.png" alt="signature-item-00">
+                        </p>
+                        <p class="centerImg">
+                            <img src="./imgs/menu/c-beverage-item-00.png" alt="beverage-item-00">
+                        </p>
+                        <p class="centerImg">
+                            <img src="./imgs/menu/c-coffee-item-00.png" alt="coffee-item-00">
+                        </p>
+                        <p class="centerImg">
+                            <img src="./imgs/menu/c-cookie-item-00.png" alt="cookie-item-00">
+                        </p>
+                    </div>
+                </div>
+                <!-- main3 -->
+                <div class="main3_wrap">
+                    <div class="main3_inner">
+                        <div class="title">
+                            <img src="./imgs/main/m-3rd_sec-header.svg" alt="sec-header">
+                        </div>
+                        <div class="bg">
+                            <img src="./imgs/main/m-3rd_sec-bg.jpg" alt="sec-bg">
+                        </div>
+                        <div class="aniLetterBox">
+                            <div class="box displayNone">
+                                <span>
+                                    <img src="./imgs/main/m-3rd_sec-marquee.svg" alt="sec-marquee"> 매장에서 직접 구워 맛있는 셀렉토 쿠키
+                                </span>
+                                <span>
+                                    <img src="./imgs/main/m-3rd_sec-marquee.svg" alt="sec-marquee"> 매장에서 직접 구워 맛있는 셀렉토 쿠키
+                                </span>
+                                <span>
+                                    <img src="./imgs/main/m-3rd_sec-marquee.svg" alt="sec-marquee"> 매장에서 직접 구워 맛있는 셀렉토 쿠키
+                                </span>
+                                <span>
+                                    <img src="./imgs/main/m-3rd_sec-marquee.svg" alt="sec-marquee"> 매장에서 직접 구워 맛있는 셀렉토 쿠키
+                                </span>
+                                <span>
+                                    <img src="./imgs/main/m-3rd_sec-marquee.svg" alt="sec-marquee"> 매장에서 직접 구워 맛있는 셀렉토 쿠키
+                                </span>
+                            </div>
+                            <div class="box box1">
+                                <span>
+                                    <img src="./imgs/main/m-3rd_sec-marquee.svg" alt="sec-marquee"> 매장에서 직접 구워 맛있는 셀렉토 쿠키
+                                </span>
+                                <span>
+                                    <img src="./imgs/main/m-3rd_sec-marquee.svg" alt="sec-marquee"> 매장에서 직접 구워 맛있는 셀렉토 쿠키
+                                </span>
+                                <span>
+                                    <img src="./imgs/main/m-3rd_sec-marquee.svg" alt="sec-marquee"> 매장에서 직접 구워 맛있는 셀렉토 쿠키
+                                </span>
+                                <span>
+                                    <img src="./imgs/main/m-3rd_sec-marquee.svg" alt="sec-marquee"> 매장에서 직접 구워 맛있는 셀렉토 쿠키
+                                </span>
+                                <span>
+                                    <img src="./imgs/main/m-3rd_sec-marquee.svg" alt="sec-marquee"> 매장에서 직접 구워 맛있는 셀렉토 쿠키
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- main4 -->
+                <div class="main4_wrap">
+                    <div class="main4_inner">
+                        <div class="main4count">
+                            <div class="countBox">
+                                <div class="title">
+                                    <span>
+                                        셀렉토 커피에서 커피와<br>
+                                        기부를<br class="none">
+                                        함께 즐기세요!
+                                    </span>
+                                    <span>
+                                        매일 마시는 커피 한 잔을<br>
+                                        '마시기만 해도 기부'가 되는 곳이 있습니다<br class="none">
+                                        셀렉토커피에서는 SELECTO'S PICK을 마시기만 해도 결식아동에게 '우유 1팩'이 기부됩니다.
+                                    </span>
+                                </div>
+                                <div class="container">
+                                    <p>결식아동에게 기부된 우유</p>
+                                    <p id="count">
+                                        292,446
+                                    </p>
+                                    <p>2023.02.01일 기준</p>
+                                </div>
+                                <button class="count_Btn">자세히 보기</button>
+                            </div>
+                        </div>
+                        <div class="main4Img displayNone">
+                            <div class="imgLine">
+                                <div class="center_con"></div>
+                                <div class="top_con"></div>
+                                <div class="bottom_con"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- main5 -->
+                <div class="main5_wrap">
+                    <div class="main5_inner">
+                        <div class="main5_left">
+                            <div class="title">
+                                news &<br>
+                                events
+                            </div>
+                            <div class="arrow_right">
+                                <img src="./imgs/main/m-arrow.png" alt="m-arrow">
+                            </div>
+                            <div class="rotate_arrow displayNone">
+                                <img src="./imgs/main/m-circle-txt.png" alt="m-circle-txt">
+                                <a href="">
+                                    <img src="./imgs/main/m-arrow.png" alt="m-arrow">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="main5_right">
+                            <div class="rightBox">
+                                <div class="infoBox">
+                                    <h3>event</h3>
+                                    <h2>[NEW MENU] Born in spring wish</h2>
+                                    <p>2023/02/06 ~ 2023/04/30</p>
+                                </div>
+                                <div class="imgBox displayNone">
+                                    <img src="./imgs/new/BornInSpringWish.jpg" alt="BornInSpringWish">
+                                </div>
+                                <div class="arrowBox">
+                                    <img src="./imgs/main/m-arrow.png" alt="m-arrow">
+                                </div>
+                            </div>
+                            <div class="rightBox">
+                                <div class="infoBox">
+                                    <h3>event</h3>
+                                    <h2>[제작지원] tvN 드라마 '일타 스캔들' 제작지원</h2>
+                                    <p>2023/02/04 ~ 2023/03/05</p>
+                                </div>
+                                <div class="imgBox displayNone">
+                                    <img src="./imgs/new/일타스캔들.png" alt="일타스캔들">
+                                </div>
+                                <div class="arrowBox">
+                                    <img src="./imgs/main/m-arrow.png" alt="m-arrow">
+                                </div>
+                            </div>
+                            <div class="rightBox">
+                                <div class="infoBox">
+                                    <h3>event</h3>
+                                    <h2>[NEW VIDEO] 내가 셀렉하는 오늘의 무드는?</h2>
+                                    <p>2022/10/18 ~ 2024/10/18</p>
+                                </div>
+                                <div class="imgBox displayNone">
+                                    <img src="./imgs/new/오늘의무드.png" alt="오늘의무드">
+                                </div>
+                                <div class="arrowBox">
+                                    <img src="./imgs/main/m-arrow.png" alt="m-arrow">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- main6 -->
+                <div class="main6_wrap">
+                    <div class="main6_inner">
+                        <div class="title">
+                            <div class="box">
+                                <img src="./imgs/main/m-6th_sec-header_icon.svg" alt="sec-header_icon">
+                                <p>selecto_coffee</p>
+                            </div>
+                        </div>
+                        <div class="imgbox">
+                            <div class="img_inner">
+                                <a href="https://www.instagram.com/p/Coa7cuAhUbf/" target="_blank">
+                                    <img src="./imgs/sns/봄딸기라떼.jpg" alt="봄딸기라떼">
+                                </a>
+                                <a href="https://www.instagram.com/p/CoYWl9CuFrg/" target="_blank">
+                                    <img src="imgs/sns/봄딸기돌체크림라떼.jpg" alt="봄딸기돌체크림라떼">
+                                </a>
+                                <a href="https://www.instagram.com/p/CoVx3PeOp4U/" target="_blank">
+                                    <img src="imgs/sns/봄딸기자두비얀코F.jpg" alt="봄딸기자두비얀코F">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <!-- popUp 개인정보처리 -->
+                <div id="privacyPopUp" class="displayNone">
+                    <div class="popup_wrap">
+                        <div class="footer_popup">
+                            <p class="privacy_closeBtn"></p>
+                            <p class="privacy_title">개인정보취급방침</p>
+                            <p class="privacy_title2">셀렉토 커피는 이용자들의 개인정보를 소중히 다루고 있습니다.</p>
+                            <div class="privacy_txtbox">
+                                <h4>수집하는 개인정보 항목</h4>
+                                <p>회사는 SMS상담, 브로슈어신청, 온라인창업문의 신청 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.</p>
+                                <p>
+                                    - 수집항목 : 이름 , 연락처 , 휴대전화번호 ,쿠키<br>
+                                    - 개인정보 수집방법 : 홈페이지(상담신청란)
+                                </p>
+
+                                <h4>개인정보의 수집 및 이용목적</h4>
+                                <p>회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br>
+                                서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 정보제공,콘텐츠 제공 , 불만처리 등 민원처리 , 고지사항 전달 마케팅 및 광고에 활용, 이벤트 등 광고성 정보 전달 , 접속 빈도 파악 또는 회원의 서비스 이용에 대한 통계</p>
+
+                                <h4>개인정보의 보유 및 이용기간</h4>
+                                <p>원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 관계법령의 규정에 의하여 보존할 필요가 있는 경우 회사는 아래와 같이 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다.</p>
+                                <p>
+                                    - 보존 항목 : 결제기록<br>
+                                    - 보존 근거 : 계약 또는 청약철회 등에 관한 기록<br>
+                                    - 보존 기간 : 3년
+                                    - 계약 또는 청약철회 등에 관한 기록 : 5년 (전자상거래등에서의 소비자보호에 관한 법률)<br>
+                                    - 대금결제 및 재화 등의 공급에 관한 기록 : 5년 (전자상거래등에서의 소비자보호에 관한 법률)<br>
+                                    - 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년 (전자상거래등에서의 소비자보호에 관한 법률)
+                                </p>
+
+                                <h4>개인정보의 파기절차 및 방법</h4>
+                                <p>회사는 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체없이 파기합니다. 파기절차 및 방법은 다음과 같습니다.</p>
+                                <p>
+                                    파기절차 회원님이 상담등을 위해 입력하신 정보는 목적이 달성된 후 별도의 DB로 옮겨져(종이의 경우 별도의 서류함)<br>
+                                    내부 방침 및 기타 관련 법령에 의한 정보보호 사유에 따라(보유 및 이용기간 참조) 일정 기간 저장된 후 파기되어집니다. 별도 DB로 옮겨진 개인정보는 법률에 의한 경우가 아니고서는 보유되어지는 이외의 다른 목적으로 이용되지 않습니다.
+                                </p>
+                                <p>파기방법 전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.</p>
+
+                                <h4>개인정보 제공</h4>
+                                <p>
+                                    회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.<br>
+                                    - 이용자들이 사전에 동의한 경우<br>
+                                    법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우
+                                </p>
+
+                                <h4>이용자 및 법정대리인의 권리와 그 행사방법</h4>
+                                <p>
+                                    이용자들의 개인정보 조회,수정을 위해서는 본인 확인 절차를 거치신 후 정정 또는 탈퇴가 가능합니다. 혹은 개인정보관리책임자에게 서면, 전화 또는 이메일로 연락하시면 지체없이 조치하겠습니다.<br>
+                                    귀하가 개인정보의 오류에 대한 정정을 요청하신 경우에는 정정을 완료하기 전까지 당해 개인정보를 이용 또는 제공하지 않습니다. 또한 잘못된 개인정보를 제3자에게 이미 제공한 경우에는 정정 처리결과를 제3자에게 지체없이 통지하여 정정이 이루어지도록 하겠습니다.<br>
+                                    회사는 이용자의 요청에 의해 해지 또는 삭제된 개인정보는 "회사가 수집하는 개인정보의 보유 및 이용기간"에 명시된 바에 따라 처리하고 그 외의 용도로 열람 또는 이용할 수 없도록 처리하고 있습니다.
+                                </p>
+                                
+                                <h4>개인정보 자동수집 장치의 설치, 운영 및 그 거부에 관한 사항</h4>
+                                <p>회사는 귀하의 정보를 수시로 저장하고 찾아내는 '쿠키(cookie)' 등을 운용합니다. 쿠키란 oo의 웹사이트를 운영하는데 이용되는 서버가 귀하의 브라우저에 보내는 아주 작은 텍스트 파일로서 귀하의 컴퓨터 하드디스크에 저장됩니다. 회사은(는) 다음과 같은 목적을 위해 쿠키를 사용합니다.</p>
+                                <p>
+                                    쿠키 등 사용 목적 - 회원과 비회원의 접속 빈도나 방문 시간 등을 분석, 이용자의 취향과 관심분야를 파악 및 자취 추적, 각종 이벤트 참여 정도 및 방문 회수 파악 등을 통한 타겟 마케팅 및 개인 맞춤 서비스 제공 귀하는 쿠키 설치에 대한 선택권을 가지고 있습니다.<br>
+                                    따라서, 귀하는 웹브라우저에서 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 아니면 모든 쿠키의 저장을 거부할 수도 있습니다.
+                                </p>
+                                <p>
+                                    쿠키 설정 거부 방법 쿠키 설정을 거부하는 방법으로는 회원님이 사용하시는 웹 브라우저의 옵션을 선택함으로써 모든 쿠키를 허용하거나 쿠키를 저장할 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다.<br>
+                                    설정방법 예(인터넷 익스플로어의 경우) : 웹 브라우저 상단의 도구 > 인터넷 옵션 > 개인정보 단, 귀하께서 쿠키 설치를 거부하였을 경우 서비스 제공에 어려움이 있을 수 있습니다
+                                </p>
+
+                                <h4>개인정보에 관한 민원서비스 </h4>
+                                <p>회사는 고객의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보관리책임자를 지정하고 있습니다.</p>
+                                <p>
+                                    - 고객서비스담당 부서 : 마케팅팀<br>
+                                    - 전화번호 : 1600-5649<br>
+                                    - 이메일 : phe68@selecto.co.kr
+                                </p>
+                                <p>
+                                    귀하께서는 회사의 서비스를 이용하시며 발생하는 모든 개인정보보호 관련 민원을 개인정보관리책임자 혹은 담당부서로 신고하실 수 있습니다. 회사는 이용자들의 신고사항에 대해 신속하게 충분한 답변을 드릴 것입니다.<br>
+                                    기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.
+                                </p>
+                                <p>
+                                    - 개인분쟁조정위원회 (www.1336.or.kr/1336)<br>
+                                    - 정보보호마크인증위원회 (www.eprivacy.or.kr/02-580-0533~4)<br>
+                                    - 대검찰청 인터넷범죄수사센터 (http://icic.sppo.go.kr/02-3480-3600)<br>
+                                    - 경찰청 사이버테러대응센터 (www.ctrc.go.kr/02-392-0330
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="toTop">
+                    <div class="topBtn">
+                        <img src="./imgs/main/f-totop__circle.png" alt="f-totop__circle">
+                        <img src="./imgs/main/f-totop__arrow.png" alt="f-totop__arrow">
+                    </div>
+                    <span>TOP</span>
+                </div>
+                <div class="footer_inner">
+                    <a href="#" class="footer_logo">
+                        <img src="./imgs/main/logo-white.svg" alt="logo-white">
+                    </a>
+                    <div class="footer_link">
+                        <a href="" target="_blank">
+                            <img src="./imgs/main/f-link-n.svg" alt="f-link-n">
+                        </a>
+                        <a href="" target="_blank">
+                            <img src="./imgs/main/f-link-y.svg" alt="f-link-y">
+                        </a>
+                        <a href="" target="_blank">
+                            <img src="./imgs/main/f-link-i.svg" alt="f-link-i">
+                        </a>
+                    </div>
+                    <div class="footer_privacy">
+                        <span class="privacy_btn">개인정보취급방침</span>
+                    </div>
+                    <div class="footer_info">
+                        <div class="info">
+                            <span>주소 : 서울시 구로구 구로3동 222-14 에이스하이엔드타워 2차 1402호</span>
+                            <div class="line Line_mo_none"></div>
+                            <span>도로명주소 : 서울시 구로구 디지털로26길 61 에이스하이엔드타워 2차 1402호</span>
+                        </div>
+                        <div class="info">
+                            <div class="box">
+                                <span>대표이사 : 황규연</span>
+                                <div class="line"></div>
+                                <span>사업자등록번호 : 109-81-99153</span>
+                                <div class="line Line_mo_none"></div>
+                            </div>
+                            <div class="box">
+                                <span>전화 : 1600-5649</span>
+                                <div class="line"></div>
+                                <span>팩스 : 02-6340-1701</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer_copy">
+                        <span>COPYRIGHT ㈜맥스원이링크 ALL RIGHTS RESERVED.</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+    </body>
+</html>
