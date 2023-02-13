@@ -28,7 +28,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 
         <!-- 적용 css,js -->
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" media="(max-width:500px)" href="./css/style.css">
         <script defer src="./js/index.js"></script>
     </head>
     <body>
@@ -36,75 +36,78 @@
         <div class="cursor"></div>
 
         <!-- 모바일 메뉴바 -->
-        <div class="mo_menu">
-            <div class="mo_menu_con">
-                <div class="closeBtn"></div>
-                <div class="flex_menu">
-                    <div class="menu_list">
-                        <div class="menus">
-                            <div class="clickmenu">
-                                <div class="menusTitle">셀렉토커피</div>
-                                <div class="menuArrow"></div>
+        <div class="pos">
+            <div class="mo_menu">
+                <div class="mo_menu_con">
+                    <div class="closeBtn"></div>
+                    <div class="flex_menu">
+                        <div class="menu_list">
+                            <div class="menus">
+                                <div class="clickmenu" id="clickmenu1">
+                                    <div class="menusTitle">셀렉토커피</div>
+                                    <div class="menuArrow" id="menuArrow1"></div>
+                                </div>
+                                <div class="listmenu" id="listmenu1">
+                                    <a href="">브랜드 스토리</a>
+                                    <a href="">HISTORY</a>
+                                    <a href="">경쟁력</a>
+                                    <a href="">ONE FOR ONE</a>
+                                </div>
                             </div>
-                            <div class="listmenu">
-                                <a href="">브랜드 스토리</a>
-                                <a href="">HISTORY</a>
-                                <a href="">경쟁력</a>
-                                <a href="">ONE FOR ONE</a>
+                            <div class="menus">
+                                <div class="clickmenu" id="clickmenu2">
+                                    <div class="menusTitle">메뉴</div>
+                                    <div class="menuArrow" id="menuArrow2"></div>
+                                </div>
+                                <div class="listmenu" id="listmenu2">
+                                    <a href="">Signature</a>
+                                    <a href="">Coffee</a>
+                                    <a href="">Cookie</a>
+                                    <a href="">Beverage</a>
+                                    <a href="">Deli&Dessert</a>
+                                    <a href="">MD</a>
+                                </div>
+                            </div>
+                            <div class="menus">
+                                <div class="clickmenu" id="clickmenu3">
+                                    <div class="menusTitle">매장안내</div>
+                                    <div class="menuArrow" id="menuArrow3"></div>
+                                </div>
+                                <div class="listmenu" id="listmenu3">
+                                    <a href="">매장찾기</a>
+                                    <a href="">오픈 예정 매장</a>
+                                </div>
+                            </div>
+                            <div class="menus">
+                                <div class="clickmenu" id="clickmenu4">
+                                    <div class="menusTitle">what's new</div>
+                                    <div class="menuArrow" id="menuArrow4"></div>
+                                </div>
+                                <div class="listmenu" id="listmenu4">
+                                    <a href="">새로운 소식</a>
+                                    <a href="">보도자료</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="menus">
-                            <div class="clickmenu">
-                                <div class="menusTitle">메뉴</div>
-                                <div class="menuArrow"></div>
-                            </div>
-                            <div class="listmenu">
-                                <a href="">Signature</a>
-                                <a href="">Coffee</a>
-                                <a href="">Cookie</a>
-                                <a href="">Beverage</a>
-                                <a href="">Deli&Dessert</a>
-                                <a href="">MD</a>
-                            </div>
+                        <div class="sns_list">
+                            <a href="" target="_blank">
+                                <img src="./imgs/icon/h-link-naver.svg" alt="naver">
+                            </a>
+                            <a href="" target="_blank">
+                                <img src="./imgs/icon/h-link-youtube.svg" alt="youtube">
+                            </a>
+                            <a href="" target="_blank">
+                                <img src="./imgs/icon/h-link-instagram.svg" alt="instagram">
+                            </a>
                         </div>
-                        <div class="menus">
-                            <div class="clickmenu">
-                                <div class="menusTitle">매장안내</div>
-                                <div class="menuArrow"></div>
-                            </div>
-                            <div class="listmenu">
-                                <a href="">매장찾기</a>
-                                <a href="">오픈 예정 매장</a>
-                            </div>
-                        </div>
-                        <div class="menus">
-                            <div class="clickmenu">
-                                <div class="menusTitle">what's new</div>
-                                <div class="menuArrow"></div>
-                            </div>
-                            <div class="listmenu">
-                                <a href="">새로운 소식</a>
-                                <a href="">보도자료</a>
-                            </div>
-                        </div>
+                        <button class="link_btn">창업안내</button>
                     </div>
-                    <div class="sns_list">
-                        <a href="" target="_blank">
-                            <img src="./imgs/icon/h-link-naver.svg" alt="naver">
-                        </a>
-                        <a href="" target="_blank">
-                            <img src="./imgs/icon/h-link-youtube.svg" alt="youtube">
-                        </a>
-                        <a href="" target="_blank">
-                            <img src="./imgs/icon/h-link-instagram.svg" alt="instagram">
-                        </a>
-                    </div>
-                    <button class="link_btn">창업안내</button>
                 </div>
             </div>
         </div>
+        
 
-        <div class="wrapper">
+        <div id="wrapper">
             <!-- pc 메뉴바 -->
             <header id="header">
                 <div class="header_inner">
@@ -251,231 +254,170 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-pagination mo">
-                        <span>
-                            
-                        </span>
-                    </div>
+                    <div class="swiper-pagination mo_main_pag"></div>
                     <div class="scroll_mouse pc displayNone">
                         <span></span>
                     </div>
                     <div class="scroll_info pc displayNone">scroll</div>
                     <div class="scroll_line pc displayNone"></div>
                 </div>
-                <!-- 모바일 POPup창 -->
-                <div class="mo_popup">
-                    <p class="bgColor"></p>
-                    <div class="popuo_con">
-                        <button class="popupCloseBtn">닫기</button>
-                        <div class="mianSwiper2" id="main_swiper2">
-                            <!-- Swiper -->
-                            <div class="swiper-container" id="swiper2">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="Ylink">
-                                            <a href="https://youtu.be/r6bibJ3wZQI" target="_blank">
-                                                <img src="./imgs/popup/popup1.png" alt="popup1">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="Ylink">
-                                            <a href="https://youtu.be/gGHKuVlTO3M" target="_blank">
-                                                <img src="./imgs/popup/popup2.png" alt="popup2">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="Ylink">
-                                            <a href="https://youtu.be/r6bibJ3wZQI" target="_blank">
-                                                <img src="./imgs/popup/popup1.png" alt="popup1">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="Ylink">
-                                            <a href="https://youtu.be/gGHKuVlTO3M" target="_blank">
-                                                <img src="./imgs/popup/popup2.png" alt="popup2">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-pagination mo"></div>
-                        </div>
-                        <p class="mo_popup_close">오늘 하루 창 열지 않기 <span>닫기</span></p>
-                    </div>
-                </div>
                 <!-- main2 -->
                 <div class="main2_wrap">
-                    <div class="selectoMenu_lefe">
-                        <div class="bgImg">
-                            <p class="bg bg1"></p>
-                            <p class="bg bg2"></p>
-                            <p class="bg bg3"></p>
-                            <p class="bg bg4"></p>
-                        </div>
-                        <div class="main2_Btn">
-                            <h2>selecto menu</h2>
-                            <div class="btn_list">
-                                <button>signature</button>
-                                <button>beverage</button>
-                                <button>coffee</button>
-                                <button>cookie</button>
+                    <div class="main2_inner">
+                        <div class="selectoMenu_left">
+                            <div class="bgImg">
+                                <p class="bg bg1"></p>
+                                <p class="bg bg2"></p>
+                                <p class="bg bg3"></p>
+                                <p class="bg bg4"></p>
+                            </div>
+                            <div class="main2_Btn">
+                                <h2>selecto menu</h2>
+                                <div class="btn_list">
+                                    <button>signature</button>
+                                    <button>beverage</button>
+                                    <button>coffee</button>
+                                    <button>cookie</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="selectoMenu_Right">
-                        <div class="right_inner">
-                            <div class="title">
-                                <div class="text text1">
-                                    <h3>signature</h3>
-                                    <p>셀렉토 감성과 재미를 듬뿍 담아 낸, 셀렉토에서<br>
-                                    맛볼 수 있는 시그니처 음료</p>
+                        <div class="selectoMenu_Right">
+                            <div class="right_inner">
+                                <div class="title">
+                                    <div class="text text1">
+                                        <h3>signature</h3>
+                                        <p>셀렉토 감성과 재미를 듬뿍 담아 낸, 셀렉토에서<br>
+                                        맛볼 수 있는 시그니처 음료</p>
+                                    </div>
+                                    <div class="text text2 displayNone">
+                                        <h3>beverage</h3>
+                                        <p>고객의 라이프 스타일에 맞춰 더욱 다양하게 즐길<br>수 있는 셀렉토의 음료 라인업!</p>
+                                    </div>
+                                    <div class="text text3 displayNone">
+                                        <h3>coffee</h3>
+                                        <p>셀렉토는 품질 좋은 원두를 선별해, 최적의 로스팅 포인트로<br>더욱 섬세하게 균형잡힌 풍미의 커피를 고객에게 선사합니다.</p>
+                                    </div>
+                                    <div class="text text4 displayNone">
+                                        <h3>cookie</h3>
+                                        <p>남녀노소, 어디서나 맛있게! 셀렉토 시그니처 수제 쿠키</p>
+                                    </div>
                                 </div>
-                                <div class="text text2">
-                                    <h3>beverage</h3>
-                                    <p>고객의 라이프 스타일에 맞춰 더욱 다양하게 즐길<br>수 있는 셀렉토의 음료 라인업!</p>
-                                </div>
-                                <div class="text text3">
-                                    <h3>coffee</h3>
-                                    <p>셀렉토는 품질 좋은 원두를 선별해, 최적의 로스팅 포인트로<br>더욱 섬세하게 균형잡힌 풍미의 커피를 고객에게 선사합니다.</p>
-                                </div>
-                                <div class="text text4">
-                                    <h3>cookie</h3>
-                                    <p>남녀노소, 어디서나 맛있게! 셀렉토 시그니처 수제 쿠키</p>
-                                </div>
-                            </div>
-                            <div class="itemImg">
-                                <div class="imgbox imgbox1">
-                                    <a href="#none">
-                                        <img src="./imgs/menu/c-signature-item-01.png" alt="signature-item-01">
-                                    </a>
-                                    <a href="#none">
-                                        <img src="./imgs/menu/c-signature-item-02-1.png" alt="signature-item-02">
-                                    </a>
-                                    <a href="#none">
-                                        <img src="./imgs/menu/c-signature-item-03-1.png" alt="signature-item-03">
-                                    </a>
-                                </div>
-                                <div class="imgbox imgbox2">
-                                    <a href="#none">
-                                        <img src="./imgs/menu/c-beverage-item-01.png" alt="beverage-item-01">
-                                    </a>
-                                    <a href="#none">
-                                        <img src="./imgs/menu/c-beverage-item-02.png" alt="beverage-item-02">
-                                    </a>
-                                    <a href="#none">
-                                        <img src="./imgs/menu/c-beverage-item-03.png" alt="beverage-item-03">
-                                    </a>
-                                </div>
-                                <div class="imgbox imgbox3">
-                                    <a href="#none">
-                                        <img src="./imgs/menu/c-coffee-item-01.png" alt="coffee-item-01">
-                                    </a>
-                                    <a href="#none">
-                                        <img src="./imgs/menu/c-coffee-item-02.png" alt="coffee-item-02">
-                                    </a>
-                                    <a href="#none">
-                                        <img src="./imgs/menu/c-coffee-item-03.png" alt="coffee-item-03">
-                                    </a>
-                                </div>
-                                <div class="imgbox imgbox4">
-                                    <a href="#none">
-                                        <img src="./imgs/menu/c-cookie-item-01.png" alt="cookie-item-01">
-                                    </a>
-                                    <a href="#none">
-                                        <img src="./imgs/menu/c-cookie-item-02.png" alt="cookie-item-02">
-                                    </a>
-                                    <a href="#none">
-                                        <img src="./imgs/menu/c-cookie-item-03.png" alt="cookie-item-03">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="itemTopping">
-                                <div class="toppingBox">
-                                    <h4>추천 토핑류</h4>
-                                    <div class="topping_con">
-                                        <div class="topping">
-                                            <div class="toppingImg">
-                                                <img src="./imgs/menu/c-topping-01.png" alt="시럽_바닐라빈">
-                                                <p>시럽_바닐라빈</p>
-                                            </div>
-                                            <div class="toppingImg">
-                                                <img src="./imgs/menu/c-topping-02.png" alt="시럽_카라멜">
-                                                <p>시럽_카라멜</p>
-                                            </div>
-                                            <div class="toppingImg">
-                                                <img src="./imgs/menu/c-topping-03.png" alt="우유_오트밀">
-                                                <p>우유_오트밀</p>
-                                            </div>
-                                            <div class="toppingImg">
-                                                <img src="./imgs/menu/c-topping-04.png" alt="크림_흑임자">
-                                                <p>크림_흑임자</p>
-                                            </div>
+                                <div class="itemImg">
+                                    <div class="imgbox">
+                                        <div class="box1">
+                                            <img src="./imgs/menu/c-signature-item-01.png" alt="signature-item-01">
+                                            <img src="./imgs/menu/c-signature-item-02-1.png" alt="signature-item-02">
+                                            <img src="./imgs/menu/c-signature-item-03-1.png" alt="signature-item-03">
                                         </div>
-                                        <div class="topping">
-                                            <div class="toppingImg">
-                                                <img src="./imgs/menu/c-topping-02.png" alt="시럽_카라멜">
-                                                <p>시럽_카라멜</p>
-                                            </div>
-                                            <div class="toppingImg">
-                                                <img src="./imgs/menu/c-topping-03.png" alt="우유_오트밀">
-                                                <p>우유_오트밀</p>
-                                            </div>
-                                            <div class="toppingImg">
-                                                <img src="./imgs/menu/c-topping-04.png" alt="크림_흑임자">
-                                                <p>크림_흑임자</p>
-                                            </div>
+                                    </div>
+                                    <div class="imgbox displayNone">
+                                        <div class="box2">
+                                            <img src="./imgs/menu/c-beverage-item-01.png" alt="beverage-item-01">
+                                            <img src="./imgs/menu/c-beverage-item-02.png" alt="beverage-item-02">
+                                            <img src="./imgs/menu/c-beverage-item-03.png" alt="beverage-item-03">
                                         </div>
-                                        <div class="topping">
-                                            <div class="toppingImg">
-                                                <img src="./imgs/menu/c-topping-03.png" alt="우유_오트밀">
-                                                <p>우유_오트밀</p>
-                                            </div>
-                                            <div class="toppingImg">
-                                                <img src="./imgs/menu/c-topping-04.png" alt="크림_흑임자">
-                                                <p>크림_흑임자</p>
-                                            </div>
+                                    </div>
+                                    <div class="imgbox displayNone">
+                                        <div class="box3">
+                                            <img src="./imgs/menu/c-coffee-item-01.png" alt="coffee-item-01">
+                                            <img src="./imgs/menu/c-coffee-item-02.png" alt="coffee-item-02">
+                                            <img src="./imgs/menu/c-coffee-item-03.png" alt="coffee-item-03">
                                         </div>
-                                        <div class="topping">
-                                            <div class="toppingImg">
-                                                <img src="./imgs/menu/c-topping-01.png" alt="시럽_바닐라빈">
-                                                <p>시럽_바닐라빈</p>
+                                    </div>
+                                    <div class="imgbox displayNone">
+                                        <div class="box4">
+                                            <img src="./imgs/menu/c-cookie-item-01.png" alt="cookie-item-01">
+                                            <img src="./imgs/menu/c-cookie-item-02.png" alt="cookie-item-02">
+                                            <img src="./imgs/menu/c-cookie-item-03.png" alt="cookie-item-03">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="itemTopping">
+                                    <div class="toppingBox">
+                                        <h4>추천 토핑류</h4>
+                                        <div class="topping_con">
+                                            <div id="topping">
+                                                <div class="toppingImg">
+                                                    <img src="./imgs/menu/c-topping-01.png" alt="시럽_바닐라빈">
+                                                    <p>시럽_바닐라빈</p>
+                                                </div>
+                                                <div class="toppingImg">
+                                                    <img src="./imgs/menu/c-topping-02.png" alt="시럽_카라멜">
+                                                    <p>시럽_카라멜</p>
+                                                </div>
+                                                <div class="toppingImg">
+                                                    <img src="./imgs/menu/c-topping-03.png" alt="우유_오트밀">
+                                                    <p>우유_오트밀</p>
+                                                </div>
+                                                <div class="toppingImg">
+                                                    <img src="./imgs/menu/c-topping-04.png" alt="크림_흑임자">
+                                                    <p>크림_흑임자</p>
+                                                </div>
                                             </div>
-                                            <div class="toppingImg">
-                                                <img src="./imgs/menu/c-topping-02.png" alt="시럽_카라멜">
-                                                <p>시럽_카라멜</p>
+                                            <div id="topping" class="displayNone">
+                                                <div class="toppingImg">
+                                                    <img src="./imgs/menu/c-topping-02.png" alt="시럽_카라멜">
+                                                    <p>시럽_카라멜</p>
+                                                </div>
+                                                <div class="toppingImg">
+                                                    <img src="./imgs/menu/c-topping-03.png" alt="우유_오트밀">
+                                                    <p>우유_오트밀</p>
+                                                </div>
+                                                <div class="toppingImg">
+                                                    <img src="./imgs/menu/c-topping-04.png" alt="크림_흑임자">
+                                                    <p>크림_흑임자</p>
+                                                </div>
                                             </div>
-                                            <div class="toppingImg">
-                                                <img src="./imgs/menu/c-topping-03.png" alt="우유_오트밀">
-                                                <p>우유_오트밀</p>
+                                            <div id="topping" class="displayNone">
+                                                <div class="toppingImg">
+                                                    <img src="./imgs/menu/c-topping-03.png" alt="우유_오트밀">
+                                                    <p>우유_오트밀</p>
+                                                </div>
+                                                <div class="toppingImg">
+                                                    <img src="./imgs/menu/c-topping-04.png" alt="크림_흑임자">
+                                                    <p>크림_흑임자</p>
+                                                </div>
                                             </div>
-                                            <div class="toppingImg">
-                                                <img src="./imgs/menu/c-topping-04.png" alt="크림_흑임자">
-                                                <p>크림_흑임자</p>
+                                            <div id="topping" class="displayNone">
+                                                <div class="toppingImg">
+                                                    <img src="./imgs/menu/c-topping-01.png" alt="시럽_바닐라빈">
+                                                    <p>시럽_바닐라빈</p>
+                                                </div>
+                                                <div class="toppingImg">
+                                                    <img src="./imgs/menu/c-topping-02.png" alt="시럽_카라멜">
+                                                    <p>시럽_카라멜</p>
+                                                </div>
+                                                <div class="toppingImg">
+                                                    <img src="./imgs/menu/c-topping-03.png" alt="우유_오트밀">
+                                                    <p>우유_오트밀</p>
+                                                </div>
+                                                <div class="toppingImg">
+                                                    <img src="./imgs/menu/c-topping-04.png" alt="크림_흑임자">
+                                                    <p>크림_흑임자</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- 가운데 음료 사진 -->
+                        <div class="selectoMenu_center displayNone">
+                            <p class="centerImg">
+                                <img src="./imgs/menu/c-signature-item-00.png" alt="signature-item-00">
+                            </p>
+                            <p class="centerImg displayNone">
+                                <img src="./imgs/menu/c-beverage-item-00.png" alt="beverage-item-00">
+                            </p>
+                            <p class="centerImg displayNone">
+                                <img src="./imgs/menu/c-coffee-item-00.png" alt="coffee-item-00">
+                            </p>
+                            <p class="centerImg displayNone">
+                                <img src="./imgs/menu/c-cookie-item-00.png" alt="cookie-item-00">
+                            </p>
+                        </div>
                     </div>
-                    <!-- 가운데 음료 사진 -->
-                    <div class="selectoMenu_center displayNone">
-                        <p class="centerImg">
-                            <img src="./imgs/menu/c-signature-item-00.png" alt="signature-item-00">
-                        </p>
-                        <p class="centerImg">
-                            <img src="./imgs/menu/c-beverage-item-00.png" alt="beverage-item-00">
-                        </p>
-                        <p class="centerImg">
-                            <img src="./imgs/menu/c-coffee-item-00.png" alt="coffee-item-00">
-                        </p>
-                        <p class="centerImg">
-                            <img src="./imgs/menu/c-cookie-item-00.png" alt="cookie-item-00">
-                        </p>
-                    </div>
+
                 </div>
                 <!-- main3 -->
                 <div class="main3_wrap">
@@ -537,7 +479,7 @@
                                     </span>
                                     <span>
                                         매일 마시는 커피 한 잔을<br>
-                                        '마시기만 해도 기부'가 되는 곳이 있습니다<br class="none">
+                                        '마시기만 해도 기부'가 되는 곳이 있습니다.<br>
                                         셀렉토커피에서는 SELECTO'S PICK을 마시기만 해도 결식아동에게 '우유 1팩'이 기부됩니다.
                                     </span>
                                 </div>
@@ -565,16 +507,16 @@
                     <div class="main5_inner">
                         <div class="main5_left">
                             <div class="title">
-                                news &<br>
+                                news &<br class="none">
                                 events
                             </div>
                             <div class="arrow_right">
                                 <img src="./imgs/main/m-arrow.png" alt="m-arrow">
                             </div>
                             <div class="rotate_arrow displayNone">
-                                <img src="./imgs/main/m-circle-txt.png" alt="m-circle-txt">
+                                <img class="rotate_img" src="./imgs/main/m-circle-txt.png" alt="m-circle-txt">
                                 <a href="">
-                                    <img src="./imgs/main/m-arrow.png" alt="m-arrow">
+                                    <img class="alink_arrow" src="./imgs/main/m-arrow.png" alt="m-arrow">
                                 </a>
                             </div>
                         </div>
@@ -645,8 +587,7 @@
                         </div>
                     </div>
                 </div>
-            </main>
-            <footer>
+
                 <!-- popUp 개인정보처리 -->
                 <div id="privacyPopUp" class="displayNone">
                     <div class="popup_wrap">
@@ -733,11 +674,13 @@
                 </div>
                 <div class="toTop">
                     <div class="topBtn">
-                        <img src="./imgs/main/f-totop__circle.png" alt="f-totop__circle">
-                        <img src="./imgs/main/f-totop__arrow.png" alt="f-totop__arrow">
+                        <img class="circle_totop" src="./imgs/main/f-totop__circle.png" alt="f-totop__circle">
+                        <img class="arrow_totop" src="./imgs/main/f-totop__arrow.png" alt="f-totop__arrow">
                     </div>
                     <span>TOP</span>
                 </div>
+            </main>
+            <footer>
                 <div class="footer_inner">
                     <a href="#" class="footer_logo">
                         <img src="./imgs/main/logo-white.svg" alt="logo-white">
