@@ -1,27 +1,38 @@
 /* 모바일(기준) max-width:500 */
-
 :root {
     --swiper-navigation-size : 44px;
     --color-orange: #ff4713;
     --font-SF : 'SF UI Display','Noto Sans KR', sans-serif;
     --font-Noto : 'Noto Sans KR', sans-serif;
+    --font-Proxima : 'proximanova', 'Noto Sans KR', sans-serif;
 }
 
-.displayNone {
-    display: none !important;
-}
-body {
+body,html {
     font-family: var(--font-Noto);
     font-size: 10px;
     color: #212121;
     background-color: #f7f6f3;
     width: 100%;
-    height: 100%;
     overflow-x: hidden;
+}
+/* display:none */
+.displayNone {
+    display: none !important;
+}
+.pc {
+    display: none !important;
 }
 /* 팝업창 나왔을때 전체 스크롤 업애기 */
 .popupOpen {
     overflow-y : hidden;
+}
+/* 메뉴 나올때 블러처리 부분 */
+.bg_blur {
+    filter: blur(10px);
+}
+/* br */
+.none {
+    display: none;
 }
 
 /* 클릭이벤트/ 메뉴 햄버거 클릭시 나타나는 */
@@ -31,7 +42,6 @@ body {
     .mo_menu {
         position: fixed;
         top: 0;
-        // right: 0;
         right: -321px;
         width: 320px;
         height: 120vh;
@@ -97,6 +107,7 @@ body {
                                 cursor: pointer;
                             }
                         }
+                        /* class active */
                         .clickmenu_active {
                             .menuArrow {
                                 background-image: url(../imgs/icon/arrow-up.png);
@@ -121,6 +132,7 @@ body {
                                 }
                             }
                         }
+                        /* class active */
                         .listmenu_active {
                             display: flex;
                         }
@@ -157,19 +169,12 @@ body {
             }
         }
     }
+    /* class active */
     .mo_menu_active {
         right: 0;
     }
 }
 
-/* 메뉴 나올때 블러처리 부분 */
-.bg_blur {
-    filter: blur(10px);
-}
-/* br */
-.none {
-    display: none;
-}
 /* header */
 #wrapper {
     position: relative;
@@ -197,13 +202,71 @@ body {
                 align-items: center;
                 color: var(--color-orange);
                 font-weight: 500;
-                font-size: 16px;
+                font-size: 18px;
                 a {
                     width: 81px;
                     img {
                         max-width: 100%;
                         border: 0;
                         vertical-align: top;
+                    }
+                }
+            }
+            .menu {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: var(--color-orange);
+                font-size: 18px;
+                font-weight: 500;
+                li.menu1 {
+                    padding: 0 0 0 20px;
+                    margin: 0 40px;
+                    width: 140px;
+                    white-space: nowrap;
+                    text-align: left;
+                    line-height: 50px;
+                    font-weight: 500;
+                    flex-shrink: 0;
+                    transition: .3s ease-in-out;
+                    border-radius: 25px;
+                }
+            }
+
+            .link {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: var(--color-orange);
+                font-size: 18px;
+                font-weight: 500;
+                .btn_link {
+                    a {
+                        padding: 7px 24px;
+                        border-radius: 20px;
+                        margin-right: 32px;
+                        background-color: var(--color-orange);
+                        font-size: 16px;
+                        font-family: var(--font-Noto);
+                        color: #fff;
+                        border: 1px solid transparent;
+                        transition: .2s ease;
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+                }
+                .sns_link {
+                    a {
+                        margin-left: 16px;
+                        img {
+                            max-width: 100%;
+                            border: 0;
+                            vertical-align: top;
+                        }
                     }
                 }
             }
@@ -229,6 +292,55 @@ body {
                 }
             }
         }
+        /* menu 마우스 오버시 위에서 나타나는 메뉴 */
+        .menuPcHidden {
+            position: fixed;
+            top: -480px;
+            // top: 0;
+            left: 0;
+            width: 100%;
+            height: 480px;
+            background-color: #fff;
+            z-index: 9;
+            overflow: hidden;
+            transition: .5s ease-in-out;
+            .SoMenu_inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 80px;
+                .SoMenu {
+                    display: flex;
+                    justify-content: space-between;
+                    color: var(--color-orange);
+                    font-weight: 400;
+                    font-size: 18px;
+                    position: absolute;
+                    top: 90px;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    ul {
+                        padding: 0;
+                        margin: 0;
+                        li {
+                            padding: 0 0 0 20px;
+                            margin: 0 40px;
+                            width: 140px;
+                            white-space: nowrap;
+                            transition: .3s ease-in-out;
+                            border-radius: 25px;
+                            text-align: left;
+                            line-height: 50px;
+                            flex-shrink: 0;
+                            color: var(--color-orange);
+                        }
+                    }
+                }
+            }
+        }
     }
     main {
         position: relative;
@@ -242,16 +354,20 @@ body {
                 height: 100%;
                 position: relative;
                 max-height: 100vh;
-                margin: 0 auto;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
                 overflow: hidden;
+                list-style: none;
                 padding: 0;
                 z-index: 1;
                 .swiper-wrapper {
                     position: relative;
-                    z-index: 1;
                     width: 100%;
                     height: 100%;
+                    z-index: 1;
                     display: flex;
+                    transition-property: transform;
                     box-sizing: content-box;
                     .swiper-slide {
                         text-align: center;
@@ -259,24 +375,71 @@ body {
                         background-color: #fff;
                         display: flex;
                         align-items: center;
+                        flex-shrink: 0;
+                        height: 100%;
+                        position: relative;
                         img {
+                            display: block;
                             width: 100%;
-                            height: 100%;
+                            min-height: 100vh;
                             object-fit: cover;
                         }
                     }
                 }
             }
             .mo_main_pag {
-                font-size: 16px;
+                position: unset;
+                width: unset !important;
                 font-weight: bold;
+                font-size: 16px;
                 line-height: 21px;
                 color: rgba(255, 71, 19, 0.6);
-                display: block !important;
-                text-align: right !important;
+                letter-spacing: 4px;
+                margin-right: 20px;
+                position: absolute;
+                text-align: center;
                 .swiper-pagination-current {
                     color: var(--color-orange);
                 }
+            }
+            .scroll_mouse {
+                position: absolute;
+                bottom: 83px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 20px;
+                height: 30px;
+                border: 2px solid rgba(255, 255, 255, 1);
+                border-radius: 10px;
+                z-index: 999;
+                span {
+                    position: absolute;
+                    top: 20%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 2px;
+                    height: 5px;
+                    background-color: #fff;
+                }
+            }
+            .scroll_info {
+                position: absolute;
+                bottom: 60px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                font-size: 14px;
+                z-index: 999;
+            }
+            .scroll_line {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+                width: 1px;
+                height: 41px;
+                background: #fff;
+                z-index: 999;
             }
         }
         /* main2 / 메뉴부분 */
@@ -288,35 +451,38 @@ body {
                 flex-wrap: wrap;
                 position: relative;
                 .selectoMenu_left {
-                    width: 100%;
+                    width: calc(100%/2);
                     position: relative;
                     height: 100%;
                     .bgImg {
-                        height: 70vh;
                         .bg {
-                            height: 100%;
                             width: 100%;
                             position: absolute;
                             top: 0;
                             right: 0;
+                            height: 100vh;
                             opacity: 1;
                         }
                         .bg1 {
-                            background: url(../imgs/menu/c-signature-bg-1.jpg) no-repeat center / cover;
                             z-index: 2;
+                            background: url(../imgs/menu/c-signature-bg-1.jpg) no-repeat center / cover;
                         }
                         .bg2 {
+                            z-index: 0;
                             background: url(../imgs/menu/c-beverage-bg-1.jpg) no-repeat center / cover;
                         }
                         .bg3 {
+                            z-index: 0;
                             background: url(../imgs/menu/c-coffee-bg.png) no-repeat center / cover;
                         }
                         .bg4 {
+                            z-index: 1;
                             background: url(../imgs/menu/c-cookie-bg.png) no-repeat center / cover;
                         }
                         /* 클릭이벤트 */
                         .checked {
                             animation:  widthani 1s cubic-bezier(0.76,0,0.24,1) forwards;
+                            z-index: 5;
                             @keyframes widthani {
                                 0% {
                                   width: 0;
@@ -329,37 +495,31 @@ body {
                     }
                     .main2_Btn {
                         position: absolute;
-                        width: 90%;
-                        left: 50%;
-                        top: 3.5rem;
-                        font-family: var(--font-SF);
-                        transform: translateX(-50%);
+                        top: 8rem;
+                        left: 8rem;
                         z-index: 5;
                         h2 {
-                            font-size: 50px;
-                            font-weight: 600;
+                            font-size: 8rem;
+                            font-weight: 700;
                             color: #fff;
+                            font-family: var(--font-SF);
                             text-transform: uppercase;
-                            margin-bottom: 0.7em;
-                            text-align: center;
+                            margin-bottom: 0.5em;
                         }
                         .btn_list {
                             display: flex;
-                            justify-content: center;
-                            align-items: flex-start;
+                            align-items: start;
                             button {
-                                font-family: var(--font-SF);
-                                font-size: 16px;
-                                margin: 0 10px;
-                                background-color: transparent;
+                                font-size: 2.4rem;
+                                font-weight: 400;
                                 color: #fff;
+                                font-family: var(--font-SF);
                                 text-transform: uppercase;
-                                padding: 0;
-                                font-weight: 300;
+                                margin-bottom: 3rem;
                             }
                             /* 클릭 이벤트 */
                             .listButton_click {
-                                font-weight: 700;
+                                font-weight: 600;
                                 padding-bottom: 2px;
                                 border-bottom: 3px solid #fff;
                             }
@@ -378,7 +538,7 @@ body {
                             padding-top: 60px;
                             position: relative;
                             h3 {
-                                font-size: 32px;
+                                font-size: 3.2rem;
                                 margin-bottom: 16px;
                                 font-weight: 600;
                                 font-family: var(--font-SF);
@@ -406,12 +566,12 @@ body {
                         }
                         .itemImg {
                             width: 100%;
-                            height: 300px;
+                            height: 65vw;
                             margin: 50px 0;
                             position: relative;
                             .imgbox {
                                 height: 100%;
-                                width: 130px;
+                                width: 30%;
                                 margin-top: 100px;
                                 position: absolute;
                                 top: 0;
@@ -449,7 +609,7 @@ body {
                                     height: 200px;
                                     top: 0;
                                     left: 0;
-                                    #topping {
+                                    .topping {
                                         position: absolute;
                                         width: 100%;
                                         margin-top: 30px;
@@ -567,26 +727,25 @@ body {
         }
         /* main4 / count */
         .main4_wrap {
-            padding: 80px 0;
+            padding: 100px 0;
             position: relative;
             overflow: hidden;
             .main4_inner {
                 width: 100%;
+                height: 100vh;
                 display: flex;
-                height: unset;
                 .main4count {
-                    margin-bottom: 60px;
-                    margin-left: 0;
                     display: flex;
                     justify-content: center;
-                    width: 100%;
+                    width: 60%;
                     height: 100%;
                     position: relative;
                     .countBox {
-                        padding: 0 15px;
-                        position: unset;
-                        transform: translate(0);
-                        margin-left: 0;
+                        position: absolute;
+                        padding: 30px;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
                         width: 888px;
                         display: flex;
                         flex-direction: column;
@@ -600,69 +759,154 @@ body {
                             text-align: left;
                             span {
                                 &:first-child {
-                                    font-size: 32px;
-                                    text-align: left;
-                                    line-height: 40px;
                                     display: inline-block;
+                                    font-size: 65px;
                                     font-weight: bold;
+                                    line-height: 1.2;
                                     word-break: keep-all;
                                 }
                                 &:last-child {
-                                    font-size: 14px;
-                                    margin-top: 20px;
-                                    word-break: keep-all;
                                     display: inline-block;
+                                    font-size: 18px;
                                     font-weight: 400;
-                                    line-height: 1.4;
+                                    margin-top: 38px;
                                 }
                             }
                         }
                         .container {
-                            height: 120px;
-                            padding: 0 0 0 20px;
-                            margin-top: 50px;
-                            width: 100%;
                             display: flex;
                             flex-direction: column;
                             justify-content: center;
                             text-align: left;
-                            border: 1px solid rgba(0,0,0,0.1);
+                            width: 770px;
+                            height: 294px;
+                            margin-top: 90px;
+                            padding: 30px 60px;
+                            border: 1px solid rgba(0, 0, 0, 0.1);
                             p {
                                 &:first-child {
-                                    font-size: 12px;
+                                    font-size: 22px;
                                     font-weight: 500;
                                 }
                                 &:nth-child(2) {
-                                    font-size: 52px;
-                                    line-height: 62px;
-                                    margin: 0;
+                                    font-size: 140px;
                                     font-weight: 500;
+                                    line-height: 156px;
                                     &::after {
-                                        content: 'PACK';
+                                        content: "PACK";
+                                        font-size: 32px;
                                         line-height: 44px;
-                                        display: inline;
-                                        font-size: 20px;
+                                        margin-left: 20px;
                                     }
                                 }
                                 &:last-child {
-                                    font-size: 12px;
-                                    line-height: 12px;
+                                    font-size: 16px;
+                                    line-height: 40px;
                                     opacity: 0.3;
                                 }
                             }
                         }
                         .count_Btn {
-                            width: 160px;
-                            height: 48px;
-                            border-radius: 24px;
-                            font-size: 16px;
-                            line-height: 16px;
-                            margin-top: 12px;
+                            width: 194px;
+                            height: 60px;
+                            border-radius: 30px;
                             color: #fff;
-                            background-color: var(--color-orange);
-                            font-weight: 400;
-                            transition: 0.3 ease-in-out;
+                            background: var(--color-orange);
+                            font-size: 20px;
                             font-family: var(--font-Noto);
+                            font-weight: 400;
+                            line-height: 56px;
+                            margin-top: 50px;
+                            transition: 0.3s ease-in-out;
+                        }
+                    }
+                }
+                .main4Img {
+                    width: 40%;
+                    height: 100%;
+                    position: relative;
+                    .imgLine {
+                        position: absolute;
+                        top: 50%;
+                        right: -1rem;
+                        transform: translate(0, -50%);
+                        width: 396px;
+                        height: 792px;
+                        border-top-left-radius: 470px;
+                        border-bottom-left-radius: 470px;
+                        border: 2px solid rgba(235,86,46,.4);
+                        .center_con {
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            transform: translate(-50%,-50%);
+                            width: 590px;
+                            height: 590px;
+                            background: url(../imgs/main/m-4th_sec-main_con_1.png) no-repeat 50% /cover;
+                            animation: con_main 5s ease-in-out infinite;
+                            @keyframes con_main {
+                                0% {
+                                  background-image: url(../imgs/main/m-4th_sec-main_con_1.png);
+                                }
+                              
+                                42% {
+                                  background-image: url(../imgs/main/m-4th_sec-main_con_1.png);
+                                }
+                              
+                                50% {
+                                  background-image: url(../imgs/main/m-4th_sec-con_1.png);
+                                }
+                              
+                                92% {
+                                  background-image: url(../imgs/main/m-4th_sec-con_1.png);
+                                }
+                              
+                                100% {
+                                  background-image: url(../imgs/main/m-4th_sec-main_con_1.png);
+                                }
+                            }
+                        }
+                        .top_con {
+                            position: absolute;
+                            top: 0%;
+                            left: 45%;
+                            transform: translate(30%, -30%);
+                            width: 130px;
+                            height: 130px;
+                            background-image: url(../imgs/main/m-4th_sec-con_1.png);
+                            background-size: cover;
+                            animation: con_top 5s ease-in-out infinite;
+                            @keyframes con_top {
+                                0% {
+                                  background-image: url(../images/main/m-4th_sec-con_1.png);
+                                }
+                              
+                                42% {
+                                  background-image: url(../images/main/m-4th_sec-con_1.png);
+                                }
+                              
+                                50% {
+                                  background-image: url(../images/main/m-4th_sec-main_con_1.png);
+                                }
+                              
+                                92% {
+                                  background-image: url(../images/main/m-4th_sec-main_con_1.png);
+                                }
+                              
+                                100% {
+                                  background-image: url(../images/main/m-4th_sec-con_1.png);
+                                }
+                            }
+                        }
+                        .bottom_con {
+                            position: absolute;
+                            bottom: 0%;
+                            left: 75%;
+                            transform: translate(30%, -30%);
+                            width: 22px;
+                            height: 22px;
+                            border-radius: 50%;
+                            background-color: var(--color-orange);
                         }
                     }
                 }
@@ -819,14 +1063,9 @@ body {
                 justify-content: center;
                 align-items: center;
                 .box {
-                    margin-bottom: 30px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    img {
-                        width: 44px;
-                        height: 44px;
-                    }
                     p {
                         font-size: 32px;
                         line-height: 32px;
@@ -877,6 +1116,7 @@ body {
                 justify-content: center;
                 align-items: center;
                 .footer_popup {
+                    width: 522px;
                     height: auto;
                     position: relative;
                     background-color: #fff;

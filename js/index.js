@@ -90,7 +90,7 @@ let mainSwiper = new Swiper('.swiper', {
     
 })();
 
-/*  */
+/* scrollHeader 위로 스크롤시 헤더보임 */
 (function scrollHeader() {
     let header = document.querySelector('#header');
     let prevScroll = scrollY;
@@ -107,7 +107,271 @@ let mainSwiper = new Swiper('.swiper', {
 
     }
     function posTop(top) {
-        header.style.top = `-${top}px`;
+      header.style.top = `-${top}px`;
     }
     addEventListener('scroll', srcolled);
+})();
+
+/* menuButtom 클릭이벤트 */
+(function menuButtom() {
+  /* 
+    listButton_click
+    checked
+    displayNone
+  */
+  /* title */
+  let signature = document.querySelector('#signature');
+  let beverage = document.querySelector('#beverage');
+  let coffee = document.querySelector('#coffee');
+  let cookie = document.querySelector('#cookie');
+  /* bg */
+  let bg1 = document.querySelector('.bg1');
+  let bg2 = document.querySelector('.bg2');
+  let bg3 = document.querySelector('.bg3');
+  let bg4 = document.querySelector('.bg4');
+  /* subtitle */
+  let text1 = document.querySelector('.text1');
+  let text2 = document.querySelector('.text2');
+  let text3 = document.querySelector('.text3');
+  let text4 = document.querySelector('.text4');
+  /* img */
+  let imgbox1 = document.querySelector('#imgbox1');
+  let imgbox2 = document.querySelector('#imgbox2');
+  let imgbox3 = document.querySelector('#imgbox3');
+  let imgbox4 = document.querySelector('#imgbox4');
+  /* totting */
+  let topping1 = document.querySelector('#topping1');
+  let topping2 = document.querySelector('#topping2');
+  let topping3 = document.querySelector('#topping3');
+  let topping4 = document.querySelector('#topping4');
+
+  signature.addEventListener('click', () => {
+    /* zindex 성공 */
+    bg4.style.zIndex = '1';
+    bg3.style.zIndex = '0';
+    bg1.style.zIndex = '2';
+    bg2.style.zIndex = '0';
+    /* bg */
+    bg4.classList.remove('checked');
+    bg3.classList.remove('checked');
+    bg2.classList.remove('checked');
+    bg1.classList.add('checked');
+    /* title */
+    beverage.classList.remove('listButton_click');
+    cookie.classList.remove('listButton_click');
+    coffee.classList.remove('listButton_click');
+    signature.classList.add('listButton_click');
+    /* subtitle */
+    text4.classList.add('displayNone');
+    text3.classList.add('displayNone');
+    text2.classList.add('displayNone');
+    text1.classList.remove('displayNone');
+    /* img */
+    imgbox4.classList.add('displayNone');
+    imgbox3.classList.add('displayNone');
+    imgbox2.classList.add('displayNone');
+    imgbox1.classList.remove('displayNone');
+    /* totting */
+    topping4.classList.add('displayNone');
+    topping3.classList.add('displayNone');
+    topping2.classList.add('displayNone');
+    topping1.classList.remove('displayNone');
+  });
+  beverage.addEventListener('click', () => {
+    /* zindex 성공 */
+    bg4.style.zIndex = '0';
+    bg3.style.zIndex = '0';
+    bg1.style.zIndex = '1';
+    bg2.style.zIndex = '2';
+    /* bg */
+    bg1.classList.remove('checked');
+    bg4.classList.remove('checked');
+    bg3.classList.remove('checked');
+    bg2.classList.add('checked');
+    /* title */
+    cookie.classList.remove('listButton_click');
+    coffee.classList.remove('listButton_click');
+    signature.classList.remove('listButton_click');
+    beverage.classList.add('listButton_click');
+    /* subtitle */
+    text1.classList.add('displayNone');
+    text3.classList.add('displayNone');
+    text4.classList.add('displayNone');
+    text2.classList.remove('displayNone');
+    /* img */
+    imgbox4.classList.add('displayNone');
+    imgbox3.classList.add('displayNone');
+    imgbox1.classList.add('displayNone');
+    imgbox2.classList.remove('displayNone');
+    /* totting */
+    topping4.classList.add('displayNone');
+    topping3.classList.add('displayNone');
+    topping1.classList.add('displayNone');
+    topping2.classList.remove('displayNone');
+  });
+  coffee.addEventListener('click', () => {
+    /* zindex 성공 */
+    bg4.style.zIndex = '0';
+    bg3.style.zIndex = '2';
+    bg1.style.zIndex = '0';
+    bg2.style.zIndex = '1';
+    /* bg */   
+    bg2.classList.remove('checked');
+    bg4.classList.remove('checked');
+    bg1.classList.remove('checked');
+    bg3.classList.add('checked');
+    /* title */
+    beverage.classList.remove('listButton_click');
+    cookie.classList.remove('listButton_click');
+    signature.classList.remove('listButton_click');
+    coffee.classList.add('listButton_click');
+    /* subtitle */
+    text1.classList.add('displayNone');
+    text2.classList.add('displayNone');
+    text4.classList.add('displayNone');
+    text3.classList.remove('displayNone');
+    /* img */
+    imgbox4.classList.add('displayNone');
+    imgbox2.classList.add('displayNone');
+    imgbox1.classList.add('displayNone');
+    imgbox3.classList.remove('displayNone');
+    /* totting */
+    topping4.classList.add('displayNone');
+    topping2.classList.add('displayNone');
+    topping1.classList.add('displayNone');
+    topping3.classList.remove('displayNone');
+  });
+  cookie.addEventListener('click', () => {
+    /* zindex 성공 */
+    bg4.style.zIndex = '2';
+    bg3.style.zIndex = '1';
+    bg1.style.zIndex = '0';
+    bg2.style.zIndex = '0';
+    /* bg */ 
+    bg3.classList.remove('checked');
+    bg2.classList.remove('checked');
+    bg1.classList.remove('checked');
+    bg4.classList.add('checked');
+    /* title */
+    coffee.classList.remove('listButton_click');
+    beverage.classList.remove('listButton_click');
+    signature.classList.remove('listButton_click');
+    cookie.classList.add('listButton_click');
+    /* subtitle */
+    text1.classList.add('displayNone');
+    text2.classList.add('displayNone');
+    text3.classList.add('displayNone');
+    text4.classList.remove('displayNone');
+    /* img */
+    imgbox1.classList.add('displayNone');
+    imgbox2.classList.add('displayNone');
+    imgbox3.classList.add('displayNone');
+    imgbox4.classList.remove('displayNone');
+    /* totting */
+    topping1.classList.add('displayNone');
+    topping2.classList.add('displayNone');
+    topping3.classList.add('displayNone');
+    topping4.classList.remove('displayNone');
+  });
+
+
+})();
+
+/* 카운트 코드 실행 안됨 
+// 카운트를 표시할 요소 
+const counter = document.querySelector('#count');
+// 목표 수치
+const max = '292,446';
+
+function counters(counter, max) {
+  let now = max;
+
+  const scroll = setInterval(() => {
+    counter.innerHTML = Math.ceil(max - now);
+
+    if(now < 1) {
+      clearInterval(scroll);
+    }
+
+    const step = now / 10;
+
+    now -= step;
+  }, 50);
+} */
+/* 카운트 업 코드 실행됨 */
+(function numberCount() {
+
+  let timer;
+
+  document.addEventListener("scroll", () => {
+    let value = this.scrollY;
+    let section4offsetTop = document.querySelector(".main4_wrap").offsetTop;
+
+    if (value >= section4offsetTop) {
+      if (!timer) {
+        timer = setTimeout(() => {
+          timer = true;
+          new numberCounter("count", $("#numCount").val());
+        }, 1);
+      }
+    }
+  });
+
+  function numberCounter(target_frame, target_number) {
+    this.count = 0;
+    this.diff = 0;
+    this.target_count = parseInt(target_number);
+    this.target_frame = document.getElementById(target_frame);
+    this.timer = null;
+    this.counter();
+  }
+  numberCounter.prototype.counter = function () {
+    var self = this;
+    this.diff = this.target_count - this.count;
+  
+    if (this.diff > 0) {
+      self.count += Math.ceil(this.diff / 5);
+    }
+  
+    this.target_frame.innerHTML = this.count
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  
+    if (this.count < this.target_count) {
+      this.timer = setTimeout(function () {
+        self.counter();
+      }, 30);
+    } else {
+      clearTimeout(this.timer);
+    }
+  };
+})();
+
+/* totop 버튼 클릭시 부드럽게 최상위로 스크롤 */
+(function toTopBtn() {
+  let toTop = document.querySelector('.toTop');
+
+  toTop.addEventListener('click', () => {
+    window.scrollTo({
+      top:0,
+      behavior: 'smooth',
+    });
+  });
+})();
+
+/* 클릭시 팝업창 뜸(개인정보취급방침) */
+(function privacyPop() {
+  let privacyPopUp = document.querySelector('#privacyPopUp');
+  let privacyBtn = document.querySelector('.privacy_btn');
+  let privacyCloseBtn = document.querySelector('.privacy_closeBtn');
+  let bodyPopup = document.querySelector('body');
+  
+  privacyBtn.addEventListener('click', () => {
+    privacyPopUp.classList.remove('displayNone');
+    bodyPopup.classList.add('popupOpen');
+  });
+  privacyCloseBtn.addEventListener('click', () => {
+    privacyPopUp.classList.add('displayNone');
+    bodyPopup.classList.remove('popupOpen');
+  });
 })();

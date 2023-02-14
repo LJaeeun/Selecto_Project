@@ -28,7 +28,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 
         <!-- 적용 css,js -->
-        <link rel="stylesheet" media="(max-width:500px)" href="./css/style.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet"  media="(max-width:900px)" href="./css/style2Ta.css">
+        <link rel="stylesheet"  media="(max-width:2100px)" href="./css/style2PC.css">
+        
         <script defer src="./js/index.js"></script>
     </head>
     <body>
@@ -48,10 +51,10 @@
                                     <div class="menuArrow" id="menuArrow1"></div>
                                 </div>
                                 <div class="listmenu" id="listmenu1">
-                                    <a href="">브랜드 스토리</a>
-                                    <a href="">HISTORY</a>
-                                    <a href="">경쟁력</a>
-                                    <a href="">ONE FOR ONE</a>
+                                    <a href="#none">브랜드 스토리</a>
+                                    <a href="#none">HISTORY</a>
+                                    <a href="#none">경쟁력</a>
+                                    <a href="#none">ONE FOR ONE</a>
                                 </div>
                             </div>
                             <div class="menus">
@@ -60,12 +63,12 @@
                                     <div class="menuArrow" id="menuArrow2"></div>
                                 </div>
                                 <div class="listmenu" id="listmenu2">
-                                    <a href="">Signature</a>
-                                    <a href="">Coffee</a>
-                                    <a href="">Cookie</a>
-                                    <a href="">Beverage</a>
-                                    <a href="">Deli&Dessert</a>
-                                    <a href="">MD</a>
+                                    <a href="#none">Signature</a>
+                                    <a href="#none">Coffee</a>
+                                    <a href="#none">Cookie</a>
+                                    <a href="#none">Beverage</a>
+                                    <a href="#none">Deli&Dessert</a>
+                                    <a href="#none">MD</a>
                                 </div>
                             </div>
                             <div class="menus">
@@ -74,8 +77,8 @@
                                     <div class="menuArrow" id="menuArrow3"></div>
                                 </div>
                                 <div class="listmenu" id="listmenu3">
-                                    <a href="">매장찾기</a>
-                                    <a href="">오픈 예정 매장</a>
+                                    <a href="#none">매장찾기</a>
+                                    <a href="#none">오픈 예정 매장</a>
                                 </div>
                             </div>
                             <div class="menus">
@@ -84,19 +87,19 @@
                                     <div class="menuArrow" id="menuArrow4"></div>
                                 </div>
                                 <div class="listmenu" id="listmenu4">
-                                    <a href="">새로운 소식</a>
-                                    <a href="">보도자료</a>
+                                    <a href="#none">새로운 소식</a>
+                                    <a href="#none">보도자료</a>
                                 </div>
                             </div>
                         </div>
                         <div class="sns_list">
-                            <a href="" target="_blank">
+                            <a href="https://www.naver.com/" target="_blank">
                                 <img src="./imgs/icon/h-link-naver.svg" alt="naver">
                             </a>
-                            <a href="" target="_blank">
+                            <a href="https://www.youtube.com/" target="_blank">
                                 <img src="./imgs/icon/h-link-youtube.svg" alt="youtube">
                             </a>
-                            <a href="" target="_blank">
+                            <a href="https://www.instagram.com/" target="_blank">
                                 <img src="./imgs/icon/h-link-instagram.svg" alt="instagram">
                             </a>
                         </div>
@@ -117,79 +120,17 @@
                             <img src="./imgs/main/logo.png" alt="logo">
                         </a>
                     </h1>
-
                     <!-- pc 메뉴바 -->
-                    <nav class="menu displayNone">
-                        <ul>
-                            <li>
-                                <a href="#">셀렉토커피</a>
-                                <ul>
-                                    <li>
-                                        <a href="#">브랜드 스토리</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">HISTORY</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">경쟁력</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">ONE FOR ONE</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">메뉴</a>
-                                <ul>
-                                    <li>
-                                        <a href="#">Signature</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Coffee</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Cookie</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Beverage</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Deli&Dessert</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">MD</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">매장안내</a>
-                                <ul>
-                                    <li>
-                                        <a href="#">매장찾기</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">오픈 예정 매장</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">what's new</a>
-                                <ul>
-                                    <li>
-                                        <a href="#">새로운 소식</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">보도자료</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-
+                    <ul class="menu displayNone">
+                        <li class="menu1">셀렉토커피</li>
+                        <li class="menu1">메뉴</li>
+                        <li class="menu1">매장안내</li>
+                        <li class="menu1">what's new</li>
+                    </ul>
                     <!-- link -->
                     <div class="link displayNone">
                         <div class="btn_link">
-                            <a href="#">창업안내</a>
+                            <a href="#none">창업안내</a>
                         </div>
                         <div class="sns_link">
                             <a href="https://www.naver.com/" target="_blank">
@@ -203,9 +144,8 @@
                             </a>
                         </div>
                     </div>
-
                     <!-- 모바일 햄버거 버튼 -->
-                    <div class="burger mo">
+                    <div class="burger">
                         <div class="burger_menu">
                             <span></span>
                             <span></span>
@@ -213,9 +153,37 @@
                         </div>
                     </div>
                 </div>
+                <div class="menuPcHidden pc">
+                    <div class="SoMenu_inner">
+                        <div class="SoMenu">
+                            <ul>
+                                <li>브랜드 스토리</li>
+                                <li>HISTORY</li>
+                                <li>경쟁력</li>
+                                <li>ONE FOR ONE</li>
+                            </ul>
+                            <ul>
+                                <li>Signature</li>
+                                <li>Coffee</li>
+                                <li>Cookie</li>
+                                <li>Beverage</li>
+                                <li>Deli&Dessert</li>
+                                <li>MD</li>
+                            </ul>
+                            <ul>
+                                <li>매장찾기</li>
+                                <li>오픈 예정 매장</li>
+                            </ul>
+                            <ul>
+                                <li>새로운 소식</li>
+                                <li>보도자료</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </header>
             <main>
-                <!-- main 1 -->
+                <!-- main 1/swiper -->
                 <div class="mianSwiper" id="main_swiper">
                     <!-- Swiper -->
                     <div class="swiper-container swiper">
@@ -223,45 +191,45 @@
                             <div class="swiper-slide">
                                     <div class="img">
                                         <div class="img1">
-                                            <img class="pc displayNone" src="./imgs/slide/pc-1.jpg" alt="">
-                                            <img class="mo" src="./imgs/slide/mo-1.jpg" alt="">
+                                            <img class="pc" src="./imgs/slide/pc-1.jpg" alt="pc-1">
+                                            <img class="mobile" src="./imgs/slide/mo-1.jpg" alt="mo-1">
                                         </div>
                                     </div>
                             </div>
                             <div class="swiper-slide">
                                     <div class="img">
                                         <div class="img2">
-                                            <img class="pc displayNone" src="./imgs/slide/pc-2.jpg" alt="">
-                                            <img class="mo" src="./imgs/slide/mo-2.jpg" alt="">
+                                            <img class="pc" src="./imgs/slide/pc-2.jpg" alt="pc-2">
+                                            <img class="mobile" src="./imgs/slide/mo-2.jpg" alt="mo-2">
                                         </div>
                                     </div>
                             </div>
                             <div class="swiper-slide">
                                     <div class="img">
                                         <div class="img3">
-                                            <img class="pc displayNone" src="./imgs/slide/pc-3.jpg" alt="">
-                                            <img class="mo" src="./imgs/slide/mo-3.jpg" alt="">
+                                            <img class="pc" src="./imgs/slide/pc-3.jpg" alt="pc-3">
+                                            <img class="mobile" src="./imgs/slide/mo-3.jpg" alt="mo-3">
                                         </div>
                                     </div>
                             </div>
                             <div class="swiper-slide">
                                     <div class="img">
                                         <div class="img4">
-                                            <img class="pc displayNone" src="./imgs/slide/pc-4.jpg" alt="">
-                                            <img class="mo" src="./imgs/slide/mo-4.jpg" alt="">
+                                            <img class="pc" src="./imgs/slide/pc-4.jpg" alt="pc-4">
+                                            <img class="mobile" src="./imgs/slide/mo-4.jpg" alt="mo-4">
                                         </div>
                                     </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-pagination mo_main_pag"></div>
-                    <div class="scroll_mouse pc displayNone">
+                    <div class="scroll_mouse pc">
                         <span></span>
                     </div>
-                    <div class="scroll_info pc displayNone">scroll</div>
-                    <div class="scroll_line pc displayNone"></div>
+                    <div class="scroll_info pc">scroll</div>
+                    <div class="scroll_line pc"></div>
                 </div>
-                <!-- main2 -->
+                <!-- main2/menu -->
                 <div class="main2_wrap">
                     <div class="main2_inner">
                         <div class="selectoMenu_left">
@@ -274,10 +242,10 @@
                             <div class="main2_Btn">
                                 <h2>selecto menu</h2>
                                 <div class="btn_list">
-                                    <button>signature</button>
-                                    <button>beverage</button>
-                                    <button>coffee</button>
-                                    <button>cookie</button>
+                                    <button id="signature" class="listButton_click">signature</button>
+                                    <button id="beverage">beverage</button>
+                                    <button id="coffee">coffee</button>
+                                    <button id="cookie">cookie</button>
                                 </div>
                             </div>
                         </div>
@@ -303,28 +271,28 @@
                                     </div>
                                 </div>
                                 <div class="itemImg">
-                                    <div class="imgbox">
+                                    <div id="imgbox1" class="imgbox">
                                         <div class="box1">
                                             <img src="./imgs/menu/c-signature-item-01.png" alt="signature-item-01">
                                             <img src="./imgs/menu/c-signature-item-02-1.png" alt="signature-item-02">
                                             <img src="./imgs/menu/c-signature-item-03-1.png" alt="signature-item-03">
                                         </div>
                                     </div>
-                                    <div class="imgbox displayNone">
+                                    <div id="imgbox2" class="imgbox displayNone">
                                         <div class="box2">
                                             <img src="./imgs/menu/c-beverage-item-01.png" alt="beverage-item-01">
                                             <img src="./imgs/menu/c-beverage-item-02.png" alt="beverage-item-02">
                                             <img src="./imgs/menu/c-beverage-item-03.png" alt="beverage-item-03">
                                         </div>
                                     </div>
-                                    <div class="imgbox displayNone">
+                                    <div id="imgbox3" class="imgbox displayNone">
                                         <div class="box3">
                                             <img src="./imgs/menu/c-coffee-item-01.png" alt="coffee-item-01">
                                             <img src="./imgs/menu/c-coffee-item-02.png" alt="coffee-item-02">
                                             <img src="./imgs/menu/c-coffee-item-03.png" alt="coffee-item-03">
                                         </div>
                                     </div>
-                                    <div class="imgbox displayNone">
+                                    <div id="imgbox4" class="imgbox displayNone">
                                         <div class="box4">
                                             <img src="./imgs/menu/c-cookie-item-01.png" alt="cookie-item-01">
                                             <img src="./imgs/menu/c-cookie-item-02.png" alt="cookie-item-02">
@@ -336,7 +304,7 @@
                                     <div class="toppingBox">
                                         <h4>추천 토핑류</h4>
                                         <div class="topping_con">
-                                            <div id="topping">
+                                            <div id="topping1" class="topping">
                                                 <div class="toppingImg">
                                                     <img src="./imgs/menu/c-topping-01.png" alt="시럽_바닐라빈">
                                                     <p>시럽_바닐라빈</p>
@@ -354,7 +322,7 @@
                                                     <p>크림_흑임자</p>
                                                 </div>
                                             </div>
-                                            <div id="topping" class="displayNone">
+                                            <div id="topping2" class="topping displayNone">
                                                 <div class="toppingImg">
                                                     <img src="./imgs/menu/c-topping-02.png" alt="시럽_카라멜">
                                                     <p>시럽_카라멜</p>
@@ -368,7 +336,7 @@
                                                     <p>크림_흑임자</p>
                                                 </div>
                                             </div>
-                                            <div id="topping" class="displayNone">
+                                            <div id="topping3" class="topping displayNone">
                                                 <div class="toppingImg">
                                                     <img src="./imgs/menu/c-topping-03.png" alt="우유_오트밀">
                                                     <p>우유_오트밀</p>
@@ -378,7 +346,7 @@
                                                     <p>크림_흑임자</p>
                                                 </div>
                                             </div>
-                                            <div id="topping" class="displayNone">
+                                            <div id="topping4" class="topping displayNone">
                                                 <div class="toppingImg">
                                                     <img src="./imgs/menu/c-topping-01.png" alt="시럽_바닐라빈">
                                                     <p>시럽_바닐라빈</p>
@@ -419,7 +387,7 @@
                     </div>
 
                 </div>
-                <!-- main3 -->
+                <!-- main3/ani -->
                 <div class="main3_wrap">
                     <div class="main3_inner">
                         <div class="title">
@@ -429,7 +397,7 @@
                             <img src="./imgs/main/m-3rd_sec-bg.jpg" alt="sec-bg">
                         </div>
                         <div class="aniLetterBox">
-                            <div class="box displayNone">
+                            <div class="box">
                                 <span>
                                     <img src="./imgs/main/m-3rd_sec-marquee.svg" alt="sec-marquee"> 매장에서 직접 구워 맛있는 셀렉토 쿠키
                                 </span>
@@ -466,19 +434,19 @@
                         </div>
                     </div>
                 </div>
-                <!-- main4 -->
+                <!-- main4/count -->
                 <div class="main4_wrap">
                     <div class="main4_inner">
                         <div class="main4count">
                             <div class="countBox">
                                 <div class="title">
                                     <span>
-                                        셀렉토 커피에서 커피와<br>
+                                        셀렉토 커피에서 커피와<br class="br">
                                         기부를<br class="none">
                                         함께 즐기세요!
                                     </span>
                                     <span>
-                                        매일 마시는 커피 한 잔을<br>
+                                        매일 마시는 커피 한 잔을<br class="br">
                                         '마시기만 해도 기부'가 되는 곳이 있습니다.<br>
                                         셀렉토커피에서는 SELECTO'S PICK을 마시기만 해도 결식아동에게 '우유 1팩'이 기부됩니다.
                                     </span>
@@ -486,8 +454,9 @@
                                 <div class="container">
                                     <p>결식아동에게 기부된 우유</p>
                                     <p id="count">
-                                        292,446
+                                        0
                                     </p>
+                                    <input type="hidden" name="numCount" id="numCount" value="292446">
                                     <p>2023.02.01일 기준</p>
                                 </div>
                                 <button class="count_Btn">자세히 보기</button>
@@ -502,7 +471,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- main5 -->
+                <!-- main5/news -->
                 <div class="main5_wrap">
                     <div class="main5_inner">
                         <div class="main5_left">
@@ -515,7 +484,7 @@
                             </div>
                             <div class="rotate_arrow displayNone">
                                 <img class="rotate_img" src="./imgs/main/m-circle-txt.png" alt="m-circle-txt">
-                                <a href="">
+                                <a href="#none">
                                     <img class="alink_arrow" src="./imgs/main/m-arrow.png" alt="m-arrow">
                                 </a>
                             </div>
@@ -563,7 +532,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- main6 -->
+                <!-- main6/sns -->
                 <div class="main6_wrap">
                     <div class="main6_inner">
                         <div class="title">
@@ -680,19 +649,20 @@
                     <span>TOP</span>
                 </div>
             </main>
+            <!-- footer -->
             <footer>
                 <div class="footer_inner">
                     <a href="#" class="footer_logo">
                         <img src="./imgs/main/logo-white.svg" alt="logo-white">
                     </a>
                     <div class="footer_link">
-                        <a href="" target="_blank">
+                        <a href="https://www.naver.com/" target="_blank">
                             <img src="./imgs/main/f-link-n.svg" alt="f-link-n">
                         </a>
-                        <a href="" target="_blank">
+                        <a href="https://www.youtube.com/" target="_blank">
                             <img src="./imgs/main/f-link-y.svg" alt="f-link-y">
                         </a>
-                        <a href="" target="_blank">
+                        <a href="https://www.instagram.com/" target="_blank">
                             <img src="./imgs/main/f-link-i.svg" alt="f-link-i">
                         </a>
                     </div>
