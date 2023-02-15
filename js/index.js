@@ -93,11 +93,11 @@ let mainSwiper = new Swiper('.swiper', {
 /* scrollHeader 위로 스크롤시 헤더보임 */
 (function scrollHeader() {
     let header = document.querySelector('#header');
-    let prevScroll = scrollY;
-
+    let prevScroll = window.scrollY;
+  
     const srcolled = () => {
         // 스크롤 이벤트가 발생될 때만 스크롤된 값 반환
-        let currentScroll = scrollY; 
+        let currentScroll = window.scrollY; 
 
         const headerHt = header.offsetHeight;
         prevScroll < currentScroll ? posTop(headerHt) : posTop(0);
@@ -144,6 +144,11 @@ let mainSwiper = new Swiper('.swiper', {
   let topping2 = document.querySelector('#topping2');
   let topping3 = document.querySelector('#topping3');
   let topping4 = document.querySelector('#topping4');
+  /* 가운데 img */
+  let centerImg1 = document.querySelector('#centerImg1');
+  let centerImg2 = document.querySelector('#centerImg2');
+  let centerImg3 = document.querySelector('#centerImg3');
+  let centerImg4 = document.querySelector('#centerImg4');
 
   signature.addEventListener('click', () => {
     /* zindex 성공 */
@@ -176,6 +181,11 @@ let mainSwiper = new Swiper('.swiper', {
     topping3.classList.add('displayNone');
     topping2.classList.add('displayNone');
     topping1.classList.remove('displayNone');
+    /* centerImg */
+    centerImg2.classList.add('displayNone');
+    centerImg3.classList.add('displayNone');
+    centerImg4.classList.add('displayNone');
+    centerImg1.classList.remove('displayNone');
   });
   beverage.addEventListener('click', () => {
     /* zindex 성공 */
@@ -208,6 +218,11 @@ let mainSwiper = new Swiper('.swiper', {
     topping3.classList.add('displayNone');
     topping1.classList.add('displayNone');
     topping2.classList.remove('displayNone');
+    /* centerImg */
+    centerImg4.classList.add('displayNone');
+    centerImg3.classList.add('displayNone');
+    centerImg1.classList.add('displayNone');
+    centerImg2.classList.remove('displayNone');
   });
   coffee.addEventListener('click', () => {
     /* zindex 성공 */
@@ -240,6 +255,11 @@ let mainSwiper = new Swiper('.swiper', {
     topping2.classList.add('displayNone');
     topping1.classList.add('displayNone');
     topping3.classList.remove('displayNone');
+    /* centerImg */
+    centerImg4.classList.add('displayNone');
+    centerImg2.classList.add('displayNone');
+    centerImg1.classList.add('displayNone');
+    centerImg3.classList.remove('displayNone');
   });
   cookie.addEventListener('click', () => {
     /* zindex 성공 */
@@ -272,6 +292,11 @@ let mainSwiper = new Swiper('.swiper', {
     topping2.classList.add('displayNone');
     topping3.classList.add('displayNone');
     topping4.classList.remove('displayNone');
+    /* centerImg */
+    centerImg3.classList.add('displayNone');
+    centerImg2.classList.add('displayNone');
+    centerImg1.classList.add('displayNone');
+    centerImg4.classList.remove('displayNone');
   });
 
 
@@ -365,13 +390,67 @@ function counters(counter, max) {
   let privacyBtn = document.querySelector('.privacy_btn');
   let privacyCloseBtn = document.querySelector('.privacy_closeBtn');
   let bodyPopup = document.querySelector('body');
+  let htmlPopup = document.querySelector('html');
+  let headermenu = document.querySelector('#header');
   
   privacyBtn.addEventListener('click', () => {
     privacyPopUp.classList.remove('displayNone');
-    bodyPopup.classList.add('popupOpen');
+    htmlPopup.classList.add('popupOpen');
+    headermenu.classList.add('scrollMenu');
   });
   privacyCloseBtn.addEventListener('click', () => {
     privacyPopUp.classList.add('displayNone');
-    bodyPopup.classList.remove('popupOpen');
+    htmlPopup.classList.remove('popupOpen');
+    headermenu.classList.remove('scrollMenu');
   });
+})();
+
+/* pc 메뉴 오버시 */
+(function pcMenu() {
+  let menu = document.querySelector('.menu');
+  let menuPc = document.querySelector('.menuPcHidden');
+  let main = document.querySelector('main');
+  let btnLink = document.querySelector('.btn_link a');
+
+  menu.addEventListener('mouseover', () => {
+    menuPc.classList.add('menuOver');
+    btnLink.classList.add('linkBtnOver');
+  })
+  main.addEventListener('mouseover', () => {
+    menuPc.classList.remove('menuOver');
+    btnLink.classList.remove('linkBtnOver');
+  })
+})();
+
+/* news 마우스 오버시 이미지 */
+(function newsOver() {
+  let newsOver1 = document.querySelector('#newsOver1');
+  let newsOver2 = document.querySelector('#newsOver2');
+  let newsOver3 = document.querySelector('#newsOver3');
+
+  let newsImg1 = document.querySelector('#newsImg1 img');
+  let newsImg2 = document.querySelector('#newsImg2 img');
+  let newsImg3 = document.querySelector('#newsImg3 img');
+
+  newsOver1.addEventListener('mouseover', () => {
+    newsImg1.style.opacity = '1';
+  })
+  newsOver1.addEventListener('mouseout', () => {
+    newsImg1.style.opacity = '0';
+  })
+
+  newsOver2.addEventListener('mouseover', () => {
+    newsImg2.style.opacity = '1';
+  })
+  newsOver2.addEventListener('mouseout', () => {
+    newsImg2.style.opacity = '0';
+  })
+
+  newsOver3.addEventListener('mouseover', () => {
+    newsImg3.style.opacity = '1';
+  })
+  newsOver3.addEventListener('mouseout', () => {
+    newsImg3.style.opacity = '0';
+  })
+
 })();

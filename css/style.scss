@@ -1,4 +1,4 @@
-/* 모바일(기준) max-width:500 */
+
 :root {
     --swiper-navigation-size : 44px;
     --color-orange: #ff4713;
@@ -23,8 +23,16 @@ body,html {
     display: none !important;
 }
 /* 팝업창 나왔을때 전체 스크롤 업애기 */
+/* 
+    body에 height: 100%;가 먹지 않아서 html에 주었지만 scrollY 이벤트가 실행이 안되어 해당 부분 클릭시 html에 아래의 클래스가 붙을수 있게 실행하여 팝업창이 뜨면 뒤쪽 스크롤이 작동안하게 바꿈
+*/
 .popupOpen {
-    overflow-y : hidden;
+    height: 100%;
+    overflow-y: hidden;
+    touch-action: none;
+}
+.scrollMenu {
+    transform: translate(0, -500px);
 }
 /* 메뉴 나올때 블러처리 부분 */
 .bg_blur {
@@ -183,28 +191,32 @@ body,html {
         position: fixed;
         top: 0;
         width: 100%;
-        background-color: #fff;
-        transition: .5s ease;
+        background: #fff;
+        transition: 0.5s ease;
         z-index: 99999;
         display: grid;
+        display: block;
         .header_inner {
             position: relative;
             width: 100%;
+            height: 100px;
             display: flex;
             justify-content: space-between;
-            background-color: #fff;
+            align-content: center;
+            background: #fff;
             z-index: 99999;
-            height: 55px;
-            .logo {
-                margin: 0 16px;
-                display: flex;
+            .logo, .menu, .link {
+                display: flex !important;
                 justify-content: space-between;
                 align-items: center;
                 color: var(--color-orange);
-                font-weight: 500;
                 font-size: 18px;
+                font-weight: 500;
+            }
+            .logo {
+                margin: 0 80px;
                 a {
-                    width: 81px;
+                    width: 122px;
                     img {
                         max-width: 100%;
                         border: 0;
@@ -216,15 +228,9 @@ body,html {
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%,-50%);
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                color: var(--color-orange);
-                font-size: 18px;
-                font-weight: 500;
-                li.menu1 {
-                    padding: 0 0 0 20px;
+                transform: translate(-50%, -50%);
+                text-transform: uppercase;
+                .menu1 {
                     margin: 0 40px;
                     width: 140px;
                     white-space: nowrap;
@@ -232,18 +238,13 @@ body,html {
                     line-height: 50px;
                     font-weight: 500;
                     flex-shrink: 0;
-                    transition: .3s ease-in-out;
+                    transition: 0.3s ease-in-out;
                     border-radius: 25px;
                 }
             }
 
             .link {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                color: var(--color-orange);
-                font-size: 18px;
-                font-weight: 500;
+                margin: 0 80px;
                 .btn_link {
                     a {
                         padding: 7px 24px;
@@ -251,12 +252,14 @@ body,html {
                         margin-right: 32px;
                         background-color: var(--color-orange);
                         font-size: 16px;
+                        font-weight: 400;
                         font-family: var(--font-Noto);
                         color: #fff;
                         border: 1px solid transparent;
-                        transition: .2s ease;
-                        font-size: 16px;
-                        font-weight: 400;
+                        transition: 0.2s ease;
+                        cursor: pointer;
+                        text-decoration: none;
+                        outline: 0;
                     }
                 }
                 .sns_link {
@@ -271,39 +274,20 @@ body,html {
                 }
             }
             .burger {
-                margin: 0 16px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                cursor: pointer;
-                z-index: 99999;
-                .burger_menu {
-                    height: 20px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    align-items: center;
-                    z-index: 999999999999;
-                    span {
-                        width: 22px;
-                        height: 3px;
-                        background-color: var(--color-orange);
-                    }
-                }
+                display: none;
             }
         }
         /* menu 마우스 오버시 위에서 나타나는 메뉴 */
         .menuPcHidden {
             position: fixed;
             top: -480px;
-            // top: 0;
             left: 0;
             width: 100%;
             height: 480px;
-            background-color: #fff;
+            background: #fff;
             z-index: 9;
             overflow: hidden;
-            transition: .5s ease-in-out;
+            transition: 0.5s ease-in-out;
             .SoMenu_inner {
                 position: relative;
                 width: 100%;
@@ -321,12 +305,11 @@ body,html {
                     position: absolute;
                     top: 90px;
                     left: 50%;
-                    transform: translate(-50%, 0);
+                    transform: translate(-61%, 0);
                     ul {
                         padding: 0;
                         margin: 0;
                         li {
-                            padding: 0 0 0 20px;
                             margin: 0 40px;
                             width: 140px;
                             white-space: nowrap;
@@ -340,6 +323,15 @@ body,html {
                     }
                 }
             }
+        }
+        /* js 클래스 추가 */
+        .menuOver {
+            top: 0;
+        }
+        .linkBtnOver {
+            background-color: #fff !important;
+            color: var(--color-orange) !important;
+            border: 1px solid var(--color-orange) !important;
         }
     }
     main {
@@ -367,8 +359,7 @@ body,html {
                     height: 100%;
                     z-index: 1;
                     display: flex;
-                    transition-property: transform;
-                    box-sizing: content-box;
+
                     .swiper-slide {
                         text-align: center;
                         font-size: 18px;
@@ -377,12 +368,28 @@ body,html {
                         align-items: center;
                         flex-shrink: 0;
                         height: 100%;
+                        width: 100%;
                         position: relative;
                         img {
                             display: block;
-                            width: 100%;
+                            min-width: 100%;
                             min-height: 100vh;
                             object-fit: cover;
+                        }
+                        .img {
+                            width: 100%;
+                            .img1 {
+                                width: 100%;
+                            }
+                            .img2 {
+                                width: 100%;
+                            }
+                            .img3 {
+                                width: 100%;
+                            }
+                            .img4 {
+                                width: 100%;
+                            }
                         }
                     }
                 }
@@ -391,7 +398,7 @@ body,html {
                 position: unset;
                 width: unset !important;
                 font-weight: bold;
-                font-size: 16px;
+                font-size: 0;
                 line-height: 21px;
                 color: rgba(255, 71, 19, 0.6);
                 letter-spacing: 4px;
@@ -407,8 +414,8 @@ body,html {
                 bottom: 83px;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                width: 20px;
-                height: 30px;
+                width: 17px;
+                height: 27px;
                 border: 2px solid rgba(255, 255, 255, 1);
                 border-radius: 10px;
                 z-index: 999;
@@ -424,7 +431,7 @@ body,html {
             }
             .scroll_info {
                 position: absolute;
-                bottom: 60px;
+                bottom: 65px;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 color: white;
@@ -500,7 +507,7 @@ body,html {
                         z-index: 5;
                         h2 {
                             font-size: 8rem;
-                            font-weight: 700;
+                            font-weight: 600;
                             color: #fff;
                             font-family: var(--font-SF);
                             text-transform: uppercase;
@@ -508,10 +515,11 @@ body,html {
                         }
                         .btn_list {
                             display: flex;
+                            flex-direction: column;
                             align-items: start;
                             button {
                                 font-size: 2.4rem;
-                                font-weight: 400;
+                                font-weight: 300;
                                 color: #fff;
                                 font-family: var(--font-SF);
                                 text-transform: uppercase;
@@ -527,29 +535,29 @@ body,html {
                     }
                 }
                 .selectoMenu_Right {
-                    width: 100%;
+                    width: calc(100%/2);
                     position: relative;
                     height: 100%;
                     .right_inner {
-                        width: 90%;
-                        margin: 0 auto;
+                        width: 650px;
+                        margin-left: auto;
+                        margin-right: 60px;
                         height: 100%;
                         .title {
-                            padding-top: 60px;
+                            padding-top: 120px;
                             position: relative;
                             h3 {
-                                font-size: 3.2rem;
-                                margin-bottom: 16px;
+                                font-size: 3.6rem;
                                 font-weight: 600;
-                                font-family: var(--font-SF);
                                 color: var(--color-orange);
+                                font-family: var(--font-SF);
                                 text-transform: uppercase;
+                                margin-bottom: 20px;
                             }
                             p {
-                                font-size: 14px;
-                                word-break: keep-all;
-                                line-height: 1.4;
+                                font-size: 1.8rem;
                                 color: var(--color-orange);
+                                line-height: 1.6;
                             }
                             .text1 {
                                 position: absolute;
@@ -564,71 +572,79 @@ body,html {
                                 position: absolute;
                             }
                         }
-                        .itemImg {
+                        .itemImg {    
                             width: 100%;
-                            height: 65vw;
-                            margin: 50px 0;
-                            position: relative;
+                            height: auto;
                             .imgbox {
-                                height: 100%;
-                                width: 30%;
-                                margin-top: 100px;
-                                position: absolute;
-                                top: 0;
+                                margin-left: auto;
+                                margin-right: auto;
+                                position: relative;
+                                overflow: hidden;
+                                list-style: none;
+                                padding: 0;
+                                z-index: 1;
+                                .box {
+                                    position: relative;
+                                    width: 100%;
+                                    height: 100%;
+                                    z-index: 1;
+                                    display: flex;
+                                    box-sizing: content-box;
+                                    .img {
+                                        margin: 170px 0 100px;
+                                        flex-shrink: 0;
+                                        width: 34%;
+                                        height: 34%;
+                                        position: relative;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        .item {
+                                            width: 100%;
+                                            margin: 0 auto;
+                                        }
+                                    }
+                                }
                                 img {
                                     margin-right: 10px;
                                     margin-left: 5px;
                                     width: 100%;
                                     height: 100%;
                                 }
-                                .box1 {
-                                    display: flex;
-                                }
-                                .box2 {
-                                    display: flex;
-                                }
-                                .box3 {
-                                    display: flex;
-                                }
-                                .box4 {
-                                    display: flex;
-                                }
                             }
                         }
                         .itemTopping {
                             .toppingBox {
                                 h4 {
-                                    font-size: 20px;
+                                    font-size: 2.2rem;
+                                    font-weight: 700;
                                     color: var(--color-orange);
                                     padding-bottom: 11px;
-                                    font-weight: 700;
                                     border-bottom: 1px solid var(--color-orange);
                                 }
                                 .topping_con {
                                     position: relative;
                                     height: 200px;
-                                    top: 0;
-                                    left: 0;
                                     .topping {
                                         position: absolute;
                                         width: 100%;
-                                        margin-top: 30px;
                                         flex-wrap: wrap;
                                         display: flex;
+                                        margin-top: 3rem;
+                                        flex-wrap: wrap;
                                         .toppingImg {
-                                            margin-right: 20px;
-                                            margin-bottom: 10px;
+                                            margin-right: 2rem;
+                                            margin-bottom: 1rem;
                                             img {
-                                                width: 50px;
                                                 display: block;
+                                                width: 70px;
                                                 margin: 0 auto;
                                             }
                                             p {
-                                                margin-top: 12px;
-                                                font-size: 12px;
-                                                word-break: keep-all;
-                                                color: var(--color-orange);
                                                 text-align: center;
+                                                margin-top: 1.6rem;
+                                                font-size: 1.4rem;
+                                                color: var(--color-orange);
                                             }
                                         }
                                     }
@@ -639,7 +655,7 @@ body,html {
                 }
                 .selectoMenu_center {
                     position: absolute;
-                    top: 50%;
+                    top: 47%;
                     left: 50%;
                     transform: translate(-50%, -50%);
                     z-index: 10;
@@ -659,42 +675,37 @@ body,html {
             justify-content: center;
             overflow: hidden;
             .main3_inner {
-                padding-bottom: 0;
                 width: 100%;
+                padding-bottom: 5px;
                 border-bottom: 1px solid var(--color-orange);
                 .title {
-                    margin: 80px 0;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    margin: 160px 0;
                     img {
-                        width: 240px;
+                        width: 410px;
                     }
                 }
                 .bg {
                     overflow: hidden;
-                    height: 200px;
-                    img {
-                        width: 100%;
-                        height: 100%;
-                    }
                 }
                 .aniLetterBox {
-                    height: 10px;
-                    margin: 12px 0;
                     width: 100%;
+                    height: 45px;
                     background: none;
                     overflow: hidden;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    margin: 30px 0;
                     
                     .box {
-                        width: 1260px;
                         position: absolute;
                         display: inline-block;
                         white-space: nowrap;
                         background: none;
+                        width: 3200px;
                         overflow: hidden;
                         animation: aniLetter 35s linear infinite;
                         @keyframes aniLetter {
@@ -706,16 +717,15 @@ body,html {
                             }
                         }
                         span {
-                            font-size: 14px;
                             display: inline-block;
                             box-sizing: border-box;
                             color: var(--color-orange);
+                            font-size: 36px;
                             margin-right: 10px;
                             img {
-                                width: 18px;
-                                margin: 0 4px;
-                                margin-bottom: 1px;
                                 vertical-align: middle;
+                                margin: 0 10px;
+                                margin-bottom: 5px;
                             }
                         }
                     }
@@ -727,16 +737,14 @@ body,html {
         }
         /* main4 / count */
         .main4_wrap {
-            padding: 100px 0;
             position: relative;
             overflow: hidden;
+            padding: 100px 0;
             .main4_inner {
                 width: 100%;
                 height: 100vh;
                 display: flex;
                 .main4count {
-                    display: flex;
-                    justify-content: center;
                     width: 60%;
                     height: 100%;
                     position: relative;
@@ -769,6 +777,7 @@ body,html {
                                     display: inline-block;
                                     font-size: 18px;
                                     font-weight: 400;
+                                    line-height: 1.4;
                                     margin-top: 38px;
                                 }
                             }
@@ -783,6 +792,7 @@ body,html {
                             margin-top: 90px;
                             padding: 30px 60px;
                             border: 1px solid rgba(0, 0, 0, 0.1);
+                            box-sizing: border-box;
                             p {
                                 &:first-child {
                                     font-size: 22px;
@@ -873,34 +883,33 @@ body,html {
                             transform: translate(30%, -30%);
                             width: 130px;
                             height: 130px;
-                            background-image: url(../imgs/main/m-4th_sec-con_1.png);
-                            background-size: cover;
+                            background: url(../imgs/main/m-4th_sec-con_1.png) no-repeat 50% /cover;
                             animation: con_top 5s ease-in-out infinite;
                             @keyframes con_top {
                                 0% {
-                                  background-image: url(../images/main/m-4th_sec-con_1.png);
+                                  background-image: url(../imgs/main/m-4th_sec-con_1.png);
                                 }
                               
                                 42% {
-                                  background-image: url(../images/main/m-4th_sec-con_1.png);
+                                  background-image: url(../imgs/main/m-4th_sec-con_1.png);
                                 }
                               
                                 50% {
-                                  background-image: url(../images/main/m-4th_sec-main_con_1.png);
+                                  background-image: url(../imgs/main/m-4th_sec-main_con_1.png);
                                 }
                               
                                 92% {
-                                  background-image: url(../images/main/m-4th_sec-main_con_1.png);
+                                  background-image: url(../imgs/main/m-4th_sec-main_con_1.png);
                                 }
                               
                                 100% {
-                                  background-image: url(../images/main/m-4th_sec-con_1.png);
+                                  background-image: url(../imgs/main/m-4th_sec-con_1.png);
                                 }
                             }
                         }
                         .bottom_con {
                             position: absolute;
-                            bottom: 0%;
+                            bottom: -1%;
                             left: 75%;
                             transform: translate(30%, -30%);
                             width: 22px;
@@ -916,37 +925,40 @@ body,html {
         .main5_wrap {
             width: 100%;
             height: auto;
-            display: block;
             .main5_inner {
-                flex-direction: column;
                 width: 100%;
                 height: 100%;
                 display: flex;
-                border-top: 1px solid rgba(111,112,112,0.3);
+                border-top: 1px solid rgba(111, 112, 112, 0.3);
                 .main5_left {
-                    padding: 50px 30px;
                     position: relative;
-                    width: 100%;
-                    border-bottom: 1px solid rgba(111,112,112,0.3);
+                    width: 40%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    border-bottom: 1px solid rgba(111, 112, 112, 0.3);
                     .title {
-                        font-size: 34px;
-                        line-height: 34px;
-                        position: unset;
+                        position: absolute;
+                        top: 40px;
+                        left: 80px;
                         transform: translate(0);
-                        width: 100%;
-                        font-family: var(--font-SF);
+                        font-size: 100px;
+                        line-height: 100px;
                         color: var(--color-orange);
-                        font-weight: 600;
-                        white-space: nowrap;
+                        font-weight: 700;
                         text-transform: uppercase;
+                        white-space: nowrap;
+                        .newsBr {
+                            display: block;
+                        }
                     }
                     .arrow_right {
-                        display: block;
                         width: 10%;
-                        transform: translateX(-60px);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        display: none;
+                        margin-right: 100px;
                         img {
                             max-width: 100%;
                         }
@@ -974,29 +986,27 @@ body,html {
                         a {
                             color: #333;
                             .alink_arrow {
-                                width: 50px;
                                 position: absolute;
                                 top: 50%;
                                 left: 50%;
-                                transform: translate(-50%,-50%);
+                                transform: translate(-50%, -50%);
                             }
                         }
                     }
                 }
                 .main5_right {
-                    width: 100%;
+                    width: 60%;
                     display: flex;
                     flex-direction: column;
                     .rightBox {
-                        padding: 30px;
-                        border-left: none;
-                        border-right: none;
                         position: relative;
                         display: flex;
                         justify-content: space-between;
+                        padding: 60px;
                         cursor: pointer;
                         width: 100%;
-                        border-bottom: 1px solid rgba(111,112,112,0.3);
+                        border-left: 1px solid rgba(111, 112, 112, 0.3);
+                        border-bottom: 1px solid rgba(111, 112, 112, 0.3);
                         .infoBox {
                             display: flex;
                             flex-direction: column;
@@ -1011,33 +1021,34 @@ body,html {
                                 opacity: 0.7;
                             }
                             h2 {
-                                font-size: 16px;
-                                line-height: 16px;
-                                margin: 12px 0;
-                                width: calc(100% - 12px);
-                                overflow: hidden;
+                                font-size: 24px;
+                                font-weight: 500;
+                                line-height: 33px;
+                                margin-top: 10px;
+                                margin-bottom: 13px;
+                                word-break: keep-all;
                                 text-overflow: ellipsis;
                                 white-space: nowrap;
-                                font-weight: 500;
-                                word-break: keep-all;
+                                overflow: hidden;
                             }
                             p {
-                                font-size: 12px;
-                                line-height: 12px;
-                                font-family: var(--font-SF);
+                                font-size: 16px;
+                                line-height: 24px;
+                                font-family: var(--color-orange);
                                 opacity: .6;
                             }
                         }
                         .imgBox {
+                            display: block;
                             position: absolute;
                             top: 0;
-                            right: 140px;
+                            right: 190px;
+                            width: 224.66px;
                             height: 100%;
-                            width: 30%;
                             img {
-                                object-fit: cover;
                                 height: 100%;
-                                transition: .5s ease-in-out;
+                                transition: 0.5s ease-in-out;
+                                object-fit: cover;
                                 /* 마우스 오버시 op:1 */
                                 opacity: 0;
                             }
@@ -1047,7 +1058,7 @@ body,html {
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            transform: translateX(-60px);
+                            margin-right: 100px;
                         }
                     }
                 }
@@ -1057,40 +1068,38 @@ body,html {
         .main6_wrap {
             overflow: hidden;
             .title {
-                margin-top: 80px;
                 width: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                margin-top: 300px;
                 .box {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     p {
-                        font-size: 32px;
-                        line-height: 32px;
-                        margin-left: 12px;
-                        font-weight: 600;
+                        font-size: 50px;
+                        font-weight: bold;
+                        line-height: 117px;
                         font-family: var(--font-SF);
                         color: var(--color-orange);
+                        margin-left: 16px;
                     }
                 }
             }
             .imgbox {
-                margin-bottom: 80px;
+                margin-bottom: 130px;
                 .img_inner {
-                    padding: 10px 0;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    padding: 70px 0;
                     a {
                         width: 20%;
                         height: 20%;
                         display: block;
                         margin: 0 10px;
                         img {
-                            display: block;
-                            width: 100%;
                             cursor: pointer !important;
                         }
                     }
@@ -1188,13 +1197,14 @@ body,html {
         }
         /* 클릭시 맨위로 스크롤 부드럽게 이동 */
         .toTop {
+            width: 80px;
             position: absolute;
-            bottom: -100px;
-            right: 24px;
-            width: 44px;
+            right: 80px;
+            // bottom: -100px;
+            bottom: -120px;
+            // bottom: 440px;
             z-index: 100;
             text-align: center;
-            cursor: pointer;
             .topBtn {
                 position: relative;
                 display: flex;
@@ -1214,7 +1224,7 @@ body,html {
             }
             span {
                 font-size: 14px;
-                margin-top: 0;
+                margin-top: 10px;
                 font-family: var(--font-SF);
                 line-height: 26px;
                 letter-spacing: -0.35px;
@@ -1240,29 +1250,29 @@ body,html {
             align-items: center;
             position: relative;
             .footer_logo {
-                height: 44px;
-                margin: 24px 0;
-                justify-content: start;
                 display: flex;
+                justify-content: center;
+                margin-top: 80px;
+                margin-bottom: 40px;
             }
             .footer_link {
-                margin-bottom: 36px;
                 display: flex;
-                justify-content: start;
+                justify-content: center;
                 align-items: center;
+                margin-bottom: 40px;
                 a {
-                    margin: 0 18px;
+                    margin: 0 36px;
                     &:nth-child(2) {
                         margin: 0 36px;
                     }
                 }
             }
             .footer_privacy {
-                font-size: 14px;
                 display: flex;
-                justify-content: start;
+                justify-content: center;
+                font-size: 16px;
                 span {
-                    margin: 0 8px;
+                    margin: 0 20px;
                     color: #fff;
                     font-weight: 500;
                     cursor: pointer;
@@ -1273,40 +1283,29 @@ body,html {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                margin-top: 25px;
-                margin-bottom: 0;
-                width: 100%;
-                text-align: center;
+                margin-top: 50px;
+                margin-bottom: 40px;
                 .info {
                     display: flex;
-                    width: 100%;
-                    flex-direction: column;
-                    align-items: unset;
+                    align-items: center;
                     span {
-                        font-size: 11px;
-                        line-height: 15px;
-                        letter-spacing: 0px;
-                        margin: 5px 0;
-                        text-align: center;
+                        font-size: 14px;
                         font-weight: 300;
+                        line-height: 26px;
+                        letter-spacing: 0.35px;
+                        margin: 0 10px;
                         word-break: keep-all;
+                        text-align: center;
                     }
                     .line {
-                        margin: 7px 10px 0 10px;
-                        height: 11px;
                         width: 1px;
-                        background-color: #fff;
+                        height: 13px;
+                        background-color: white;
                         opacity: .2;
-                    }
-                    /* 라인 지우기 */
-                    .Line_mo_none {
-                        display: none !important;
+                        margin-top: 2px;
                     }
                     &:first-child {
-                        width: 100%;
-                        flex-direction: column;
-                        text-align: left;
-                        margin-bottom: 5px;
+                        width: 100%;                        text-align: left;
                         span {
                             &:last-child {
                                 margin-bottom: 0;
@@ -1319,6 +1318,9 @@ body,html {
                                 margin-bottom: 0;
                             }
                         }
+                        .line {
+                            margin-top: 8px;
+                        }
                     }
                     .box {
                         display: flex;
@@ -1328,10 +1330,10 @@ body,html {
                 }
             }
             .footer_copy {
-                margin-top: 15px;
-                margin-bottom: 45px;
                 display: flex;
                 justify-content: center;
+                margin-top: 60px;
+                margin-bottom: 65px;
                 span {
                     font-size: 12px;
                     font-family: var(--font-SF);

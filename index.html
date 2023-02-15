@@ -32,6 +32,8 @@
         <link rel="stylesheet"  media="(max-width:900px)" href="./css/style2Ta.css">
         <link rel="stylesheet"  media="(max-width:2100px)" href="./css/style2PC.css">
         
+
+        
         <script defer src="./js/index.js"></script>
     </head>
     <body>
@@ -272,31 +274,79 @@
                                 </div>
                                 <div class="itemImg">
                                     <div id="imgbox1" class="imgbox">
-                                        <div class="box1">
-                                            <img src="./imgs/menu/c-signature-item-01.png" alt="signature-item-01">
-                                            <img src="./imgs/menu/c-signature-item-02-1.png" alt="signature-item-02">
-                                            <img src="./imgs/menu/c-signature-item-03-1.png" alt="signature-item-03">
+                                        <div class="box box1">
+                                            <div class="img">
+                                                <p class="item">
+                                                    <img src="./imgs/menu/c-signature-item-01.png" alt="signature-item-01">
+                                                </p>
+                                            </div>
+                                            <div class="img">
+                                                <p class="item">
+                                                    <img src="./imgs/menu/c-signature-item-02-1.png" alt="signature-item-02">
+                                                </p>
+                                            </div>
+                                            <div class="img">
+                                                <p class="item">
+                                                    <img src="./imgs/menu/c-signature-item-03-1.png" alt="signature-item-03">
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div id="imgbox2" class="imgbox displayNone">
-                                        <div class="box2">
-                                            <img src="./imgs/menu/c-beverage-item-01.png" alt="beverage-item-01">
-                                            <img src="./imgs/menu/c-beverage-item-02.png" alt="beverage-item-02">
-                                            <img src="./imgs/menu/c-beverage-item-03.png" alt="beverage-item-03">
+                                        <div class="box box2">
+                                            <div class="img">
+                                                <p class="item">
+                                                    <img src="./imgs/menu/c-beverage-item-01.png" alt="beverage-item-01">
+                                                </p>
+                                            </div>
+                                            <div class="img">
+                                                <p class="item">
+                                                    <img src="./imgs/menu/c-beverage-item-02.png" alt="beverage-item-02">
+                                                </p>
+                                            </div>
+                                            <div class="img">
+                                                <p class="item">
+                                                    <img src="./imgs/menu/c-beverage-item-03.png" alt="beverage-item-03">
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div id="imgbox3" class="imgbox displayNone">
-                                        <div class="box3">
-                                            <img src="./imgs/menu/c-coffee-item-01.png" alt="coffee-item-01">
-                                            <img src="./imgs/menu/c-coffee-item-02.png" alt="coffee-item-02">
-                                            <img src="./imgs/menu/c-coffee-item-03.png" alt="coffee-item-03">
+                                        <div class="box box3">
+                                            <div class="img">
+                                                <p class="item">
+                                                    <img src="./imgs/menu/c-coffee-item-01.png" alt="coffee-item-01">
+                                                </p>
+                                            </div>
+                                            <div class="img">
+                                                <p class="item">
+                                                    <img src="./imgs/menu/c-coffee-item-02.png" alt="coffee-item-02">
+                                                </p>
+                                            </div>
+                                            <div class="img">
+                                                <p class="item">
+                                                    <img src="./imgs/menu/c-coffee-item-03.png" alt="coffee-item-03">
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div id="imgbox4" class="imgbox displayNone">
-                                        <div class="box4">
-                                            <img src="./imgs/menu/c-cookie-item-01.png" alt="cookie-item-01">
-                                            <img src="./imgs/menu/c-cookie-item-02.png" alt="cookie-item-02">
-                                            <img src="./imgs/menu/c-cookie-item-03.png" alt="cookie-item-03">
+                                        <div class="box box4">
+                                            <div class="img">
+                                                <p class="item">
+                                                    <img src="./imgs/menu/c-cookie-item-01.png" alt="cookie-item-01">
+                                                </p>
+                                            </div>
+                                            <div class="img">
+                                                <p class="item">
+                                                    <img src="./imgs/menu/c-cookie-item-02.png" alt="cookie-item-02">
+                                                </p>
+                                            </div>
+                                            <div class="img">
+                                                <p class="item">
+                                                    <img src="./imgs/menu/c-cookie-item-03.png" alt="cookie-item-03">
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -370,17 +420,17 @@
                             </div>
                         </div>
                         <!-- 가운데 음료 사진 -->
-                        <div class="selectoMenu_center displayNone">
-                            <p class="centerImg">
+                        <div class="selectoMenu_center">
+                            <p class="centerImg" id="centerImg1">
                                 <img src="./imgs/menu/c-signature-item-00.png" alt="signature-item-00">
                             </p>
-                            <p class="centerImg displayNone">
+                            <p class="centerImg displayNone" id="centerImg2">
                                 <img src="./imgs/menu/c-beverage-item-00.png" alt="beverage-item-00">
                             </p>
-                            <p class="centerImg displayNone">
+                            <p class="centerImg displayNone" id="centerImg3">
                                 <img src="./imgs/menu/c-coffee-item-00.png" alt="coffee-item-00">
                             </p>
-                            <p class="centerImg displayNone">
+                            <p class="centerImg displayNone" id="centerImg4">
                                 <img src="./imgs/menu/c-cookie-item-00.png" alt="cookie-item-00">
                             </p>
                         </div>
@@ -462,7 +512,7 @@
                                 <button class="count_Btn">자세히 보기</button>
                             </div>
                         </div>
-                        <div class="main4Img displayNone">
+                        <div class="main4Img">
                             <div class="imgLine">
                                 <div class="center_con"></div>
                                 <div class="top_con"></div>
@@ -476,13 +526,13 @@
                     <div class="main5_inner">
                         <div class="main5_left">
                             <div class="title">
-                                news &<br class="none">
+                                news &<br class="newsBr">
                                 events
                             </div>
                             <div class="arrow_right">
                                 <img src="./imgs/main/m-arrow.png" alt="m-arrow">
                             </div>
-                            <div class="rotate_arrow displayNone">
+                            <div class="rotate_arrow">
                                 <img class="rotate_img" src="./imgs/main/m-circle-txt.png" alt="m-circle-txt">
                                 <a href="#none">
                                     <img class="alink_arrow" src="./imgs/main/m-arrow.png" alt="m-arrow">
@@ -490,39 +540,39 @@
                             </div>
                         </div>
                         <div class="main5_right">
-                            <div class="rightBox">
+                            <div class="rightBox" id="newsOver1">
                                 <div class="infoBox">
                                     <h3>event</h3>
                                     <h2>[NEW MENU] Born in spring wish</h2>
                                     <p>2023/02/06 ~ 2023/04/30</p>
                                 </div>
-                                <div class="imgBox displayNone">
+                                <div class="imgBox" id="newsImg1">
                                     <img src="./imgs/new/BornInSpringWish.jpg" alt="BornInSpringWish">
                                 </div>
                                 <div class="arrowBox">
                                     <img src="./imgs/main/m-arrow.png" alt="m-arrow">
                                 </div>
                             </div>
-                            <div class="rightBox">
+                            <div class="rightBox" id="newsOver2">
                                 <div class="infoBox">
                                     <h3>event</h3>
                                     <h2>[제작지원] tvN 드라마 '일타 스캔들' 제작지원</h2>
                                     <p>2023/02/04 ~ 2023/03/05</p>
                                 </div>
-                                <div class="imgBox displayNone">
+                                <div class="imgBox" id="newsImg2">
                                     <img src="./imgs/new/일타스캔들.png" alt="일타스캔들">
                                 </div>
                                 <div class="arrowBox">
                                     <img src="./imgs/main/m-arrow.png" alt="m-arrow">
                                 </div>
                             </div>
-                            <div class="rightBox">
+                            <div class="rightBox" id="newsOver3">
                                 <div class="infoBox">
                                     <h3>event</h3>
                                     <h2>[NEW VIDEO] 내가 셀렉하는 오늘의 무드는?</h2>
                                     <p>2022/10/18 ~ 2024/10/18</p>
                                 </div>
-                                <div class="imgBox displayNone">
+                                <div class="imgBox" id="newsImg3">
                                     <img src="./imgs/new/오늘의무드.png" alt="오늘의무드">
                                 </div>
                                 <div class="arrowBox">
