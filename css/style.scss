@@ -21,10 +21,6 @@ body,html {
 .pc {
     display: none !important;
 }
-/* 팝업창 나왔을때 전체 스크롤 업애기 */
-/* 
-    body에 height: 100%;가 먹지 않아서 html에 주었지만 scrollY 이벤트가 실행이 안되어 해당 부분 클릭시 html에 아래의 클래스가 붙을수 있게 실행하여 팝업창이 뜨면 뒤쪽 스크롤이 작동안하게 바꿈
-*/
 .popupOpen {
     height: 100%;
     overflow-y: hidden;
@@ -1132,10 +1128,6 @@ body,html {
 
         /* footer 부분 개인정보취급방침 클릭시 팝업창 */
         #privacyPopUp {
-            /* 
-                팝업창 나왔을때 전체 스크롤 업애기
-                ㄴ 팝업 클릭시 body : overflow-y : hidden; 주기
-            */
             .popup_wrap {
                 overflow: hidden;
                 position: fixed;

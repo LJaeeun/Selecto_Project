@@ -319,28 +319,7 @@ let mainSwiper = new Swiper('.swiper', {
 
 })();
 
-/* 카운트 코드 실행 안됨 
-// 카운트를 표시할 요소 
-const counter = document.querySelector('#count');
-// 목표 수치
-const max = '292,446';
-
-function counters(counter, max) {
-  let now = max;
-
-  const scroll = setInterval(() => {
-    counter.innerHTML = Math.ceil(max - now);
-
-    if(now < 1) {
-      clearInterval(scroll);
-    }
-
-    const step = now / 10;
-
-    now -= step;
-  }, 50);
-} */
-/* 카운트 업 코드 실행됨 */
+/* 카운트 업 */
 (function numberCount() {
 
   let timer;
