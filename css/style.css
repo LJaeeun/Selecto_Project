@@ -4,7 +4,6 @@
   --color-orange: #ff4713;
   --font-SF: "SF UI Display","Noto Sans KR", sans-serif;
   --font-Noto: "Noto Sans KR", sans-serif;
-  --font-Proxima: "proximanova", "Noto Sans KR", sans-serif;
 }
 
 body, html {
@@ -49,7 +48,7 @@ body, html {
   display: none;
 }
 
-/* 클릭이벤트/ 메뉴 햄버거 클릭시 나타나는 */
+/* 클릭이벤트/ 모바일 메뉴 */
 .pos {
   position: relative;
   z-index: 999999999 !important;
@@ -177,6 +176,19 @@ body, html {
   right: 0;
 }
 
+/* 커서 커스텀 */
+.cursor {
+  display: block;
+  position: absolute;
+  z-index: 10000000000000000;
+  transform: translate(10%, 10%);
+  background: url(../imgs/main/mouse-cursor.png) no-repeat 50%;
+  background-size: contain;
+  width: 45px;
+  height: 45px;
+  pointer-events: none;
+}
+
 /* header */
 #wrapper {
   position: relative;
@@ -229,6 +241,7 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
   text-transform: uppercase;
+  cursor: pointer;
 }
 #wrapper #header .header_inner .menu .menu1 {
   margin: 0 40px;
@@ -245,9 +258,10 @@ body, html {
   margin: 0 80px;
 }
 #wrapper #header .header_inner .link .btn_link a {
-  padding: 7px 24px;
+  padding: 7px 25px;
   border-radius: 20px;
   margin-right: 32px;
+  letter-spacing: 0.1px;
   background-color: var(--color-orange);
   font-size: 16px;
   font-weight: 400;
@@ -261,6 +275,12 @@ body, html {
 }
 #wrapper #header .header_inner .link .sns_link a {
   margin-left: 16px;
+}
+#wrapper #header .header_inner .link .sns_link a:nth-child(2) {
+  margin-left: 13px;
+}
+#wrapper #header .header_inner .link .sns_link a:last-child {
+  margin-left: 12px;
 }
 #wrapper #header .header_inner .link .sns_link a img {
   max-width: 100%;
@@ -315,6 +335,7 @@ body, html {
   line-height: 50px;
   flex-shrink: 0;
   color: var(--color-orange);
+  cursor: pointer;
 }
 #wrapper #header .menuOver {
   top: 0;
@@ -359,6 +380,7 @@ body, html {
   height: 100%;
   z-index: 1;
   display: flex;
+  cursor: pointer;
 }
 #wrapper main .mianSwiper .swiper .swiper-wrapper .swiper-slide {
   text-align: center;
@@ -602,6 +624,7 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 #wrapper main .main2_wrap .main2_inner .selectoMenu_Right .right_inner .itemImg .imgbox .box .img .item {
   width: 100%;
@@ -914,6 +937,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
   border-bottom: 1px solid rgba(111, 112, 112, 0.3);
 }
 #wrapper main .main5_wrap .main5_inner .main5_left .title {
@@ -937,7 +961,6 @@ body, html {
   justify-content: center;
   align-items: center;
   display: none;
-  margin-right: 100px;
 }
 #wrapper main .main5_wrap .main5_inner .main5_left .arrow_right img {
   max-width: 100%;
@@ -981,6 +1004,7 @@ body, html {
   display: flex;
   justify-content: space-between;
   padding: 60px;
+  box-sizing: border-box;
   cursor: pointer;
   width: 100%;
   border-left: 1px solid rgba(111, 112, 112, 0.3);
@@ -991,7 +1015,7 @@ body, html {
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  width: 85%;
+  width: 80%;
   color: var(--color-orange);
 }
 #wrapper main .main5_wrap .main5_inner .main5_right .rightBox .infoBox h3 {
@@ -1007,9 +1031,9 @@ body, html {
   margin-top: 10px;
   margin-bottom: 13px;
   word-break: keep-all;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis !important;
+  white-space: nowrap;
 }
 #wrapper main .main5_wrap .main5_inner .main5_right .rightBox .infoBox p {
   font-size: 16px;
@@ -1037,7 +1061,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 100px;
+  box-sizing: border-box;
 }
 #wrapper main .main6_wrap {
   overflow: hidden;
@@ -1174,6 +1198,7 @@ body, html {
   bottom: -120px;
   z-index: 100;
   text-align: center;
+  cursor: pointer;
 }
 #wrapper main .toTop .topBtn {
   position: relative;

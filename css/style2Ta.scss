@@ -3,7 +3,6 @@
     --color-orange: #ff4713;
     --font-SF : 'SF UI Display','Noto Sans KR', sans-serif;
     --font-Noto : 'Noto Sans KR', sans-serif;
-    --font-Proxima : 'proximanova', 'Noto Sans KR', sans-serif;
 }
 html, body {
     font-family: var(--font-Noto);
@@ -22,6 +21,13 @@ html, body {
 }
 .br {
     display: none !important;
+}
+
+/* 커서 커스텀 */
+.cursor {
+    @media (max-width:900px) {
+        display: none !important;
+    }
 }
 
 #wrapper {
@@ -365,11 +371,9 @@ html, body {
                             .infoBox {
                                 h2 {
                                     width: calc(100% - 1.2rem);
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
-                                    white-space: nowrap;
-                                }
-                                p {
+                                    white-space: nowrap !important;
+                                    overflow: hidden !important;
+                                    text-overflow: ellipsis !important;
                                 }
                             }
                         }
@@ -382,8 +386,8 @@ html, body {
                 .main5_inner {
                     .main5_left {
                         .title {
-                            font-size: 34px;
-                            line-height: 34px;
+                            font-size: 34px !important;
+                            line-height: 34px !important;
                             .newsBr {
                                 display: none !important;
                             }
@@ -409,9 +413,9 @@ html, body {
                                     line-height: 16px;
                                     margin: 12px 0;
                                     width: calc(100% - 1.2rem);
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
-                                    white-space: nowrap;
+                                    white-space: nowrap !important;
+                                    overflow: hidden !important;
+                                    text-overflow: ellipsis !important;
                                 }
                                 p {
                                     font-size: 12px;

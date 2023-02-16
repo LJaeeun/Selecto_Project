@@ -90,6 +90,23 @@ let mainSwiper = new Swiper('.swiper', {
     
 })();
 
+/* 커서 */
+(function cursorCustomer() {
+  const doc = document.documentElement;
+  const cursor = document.querySelector('.cursor');
+  let posX = 0;
+  let posY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    posX = e.pageX + 'px';
+    posY = e.pageY + 'px';
+
+    cursor.style.top = posY;
+    cursor.style.left = posX;
+  });
+
+})();
+
 /* scrollHeader 위로 스크롤시 헤더보임 */
 (function scrollHeader() {
     let header = document.querySelector('#header');

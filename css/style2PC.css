@@ -4,7 +4,6 @@
   --color-orange: #ff4713;
   --font-SF: "SF UI Display","Noto Sans KR", sans-serif;
   --font-Noto: "Noto Sans KR", sans-serif;
-  --font-Proxima: "proximanova", "Noto Sans KR", sans-serif;
 }
 
 html, body {
@@ -336,7 +335,8 @@ html, body {
     padding: 40px;
   }
   #wrapper main .main5_wrap .main5_inner .main5_right .rightBox .infoBox h2 {
-    text-overflow: unset;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
     white-space: unset;
   }
   #wrapper main .main5_wrap .main5_inner .main5_right .rightBox .imgBox {
