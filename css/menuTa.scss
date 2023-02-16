@@ -1,0 +1,155 @@
+:root {
+    --swiper-navigation-size : 44px;
+    --color-orange: #ff4713;
+    --font-SF : 'SF UI Display','Noto Sans KR', sans-serif;
+    --font-Noto : 'Noto Sans KR', sans-serif;
+}
+html, body {
+    font-family: var(--font-Noto);
+    width: 100%;
+    // height: 100%; 할 경우 scroll 이벤트 실행 안됨
+    font-size: 10px;
+    color: #212121;
+    background-color: #f7f6f3;
+    overflow-x: hidden;
+}
+.pc {
+    display: block !important;
+}
+.mobile {
+    display: none !important;
+}
+.br {
+    display: none !important;
+}
+
+/* 커서 커스텀 */
+.cursor {
+    @media (max-width:900px) {
+        display: none !important;
+    }
+}
+
+#wrapper {
+    /* header */
+    @media (max-width : 540px) {
+        #header {
+            .header_inner {
+                height: 55px;
+                .logo {
+                    margin: 0 16px !important;
+                    a {
+                        width: 81px;
+                    }
+                }
+                .burger {
+                    margin: 0 16px !important;
+                    .burger_menu {
+                        height: 20px;
+                        span {
+                            width: 22px;
+                            height: 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    main {
+        /* footer 부분 개인정보취급방침 클릭시 팝업창 */
+        @media (max-width: 550px) {
+            #privacyPopUp {
+                .popup_wrap {
+                    .footer_popup {
+                        .privacy_title2 {
+                            font-size: 12px;
+                        }
+                        .privacy_txtbox {
+                            padding: 10px;
+                            height: 360px;
+                        }
+                    }
+                }
+            }
+        }
+        /* 클릭시 맨위로 스크롤 부드럽게 이동 */
+
+        @media (max-width:540px) {
+            .toTop {
+                bottom: -100px;
+                // right: 24px;
+                // bottom: 300px;
+                right: 24px;
+                // bottom: -80px;
+                span {
+                    font-size: 14px;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    /* footer */
+    @media (max-width:540px) {
+        footer {
+            .footer_inner {
+                .footer_logo {
+                    height: 44px;
+                    margin: 24px 0;
+                }
+                .footer_link {
+                    margin-bottom: 36px;
+                    a {
+                        margin: 0 18px;
+                        &:nth-child(2) {
+                            margin: 0 36px;
+                        }
+                    }
+                }
+                .footer_privacy {
+                    font-size: 14px;
+                    span {
+                        margin: 0 8px;
+                    }
+                }
+                .footer_info {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 25px;
+                    margin-bottom: 0;
+                    .info {
+                        flex-direction: column;
+                        width: 100%;
+                        span {
+                            font-size: 11px !important;
+                            line-height: 15px !important;
+                            letter-spacing: 0px;
+                            margin: 5px 0;
+                            text-align: center;
+                        }
+                        .line {
+                            margin: 7px 10px 0 10px;
+                            height: 11px;
+                        }
+                        &:first-child {
+                            width: 100%;
+                            flex-direction: column;
+                            text-align: left;
+                            margin-bottom: 5px;
+                        }
+                        &:last-child {
+                            .line {
+                                margin-top: 8px !important;
+                            }
+                        }
+                    }
+                }
+                .footer_copy {
+                    margin-top: 15px;
+                    margin-bottom: 45px;
+                }
+            }
+        }
+    }
+}

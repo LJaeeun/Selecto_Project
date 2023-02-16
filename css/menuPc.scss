@@ -1,0 +1,232 @@
+:root {
+    --swiper-navigation-size : 44px;
+    --color-orange: #ff4713;
+    --font-SF : 'SF UI Display','Noto Sans KR', sans-serif;
+    --font-Noto : 'Noto Sans KR', sans-serif;
+}
+html, body {
+    font-family: var(--font-Noto);
+    width: 100%;
+    font-size: 10px;
+    color: #212121;
+    background-color: #f7f6f3;
+    overflow-x: hidden;
+}
+.pc {
+    display: block !important;
+}
+.mobile {
+    display: none !important;
+}
+.br {
+    display: none !important;
+}
+#wrapper {
+    /* header */
+    @media (max-width:1650px) {
+        #header {
+            .header_inner {
+                .logo {
+                    margin: 0 40px;
+                }
+                .menu {
+                    .menu1 {
+                        margin: 0 25px;
+                    }
+                }
+                .link {
+                    margin: 0 40px;
+                    .btn_link {
+                        a {
+                            margin-right: 16px;
+                        }
+                    }
+                    .sns_link {
+                        a {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                .burger {
+                    margin: 0 40px;
+                }
+            }
+            .menuPcHidden {
+                .SoMenu_inner {
+                    .SoMenu {
+                        ul {
+                            li {
+                                margin: 0 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:1300px) {
+        #header {
+            .header_inner {
+                .logo, .menu, .link {
+                    font-size: 16px;
+                }
+                .menu {
+                    left: 48.5%;
+                    .menu1 {
+                        margin: 0 10px;
+                        width: 122px;
+                    }
+                }
+                .link {
+                    .btn_link {
+                        a {
+                            padding: 7px 16px;
+                            margin-right: 10px;
+                            font-size: 15px;
+                        }
+                    }
+                    .sns_link {
+                        a {
+                            margin-left: 5px;
+                        }
+                    }
+                }
+                
+            }
+            .menuPcHidden {
+                .SoMenu_inner {
+                    .SoMenu {
+                        font-size: 16px;
+                        left: 48.5%;
+                        transform: translate(-64%, 0);
+                        ul {
+                            li {
+                                margin: 0 10px;
+                                width: 122px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:1024px) {
+        #header {
+            .header_inner {
+                height: 80px;
+                .logo {
+                    a {
+                        width: 100px;
+                    }
+                }
+                .menu {
+                    display: none !important;
+                }
+                .link {
+                    display: none !important; 
+                }
+                .burger {
+                    display: flex !important;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    z-index: 99999;
+                    .burger_menu {
+                        height: 22px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+                        z-index: 9999999999;
+                        span {
+                            width: 30px;
+                            height: 3px;
+                            background: var(--color-orange);
+                        }
+                    }
+                }
+            }
+            .menuPcHidden {
+                display: none !important;
+            }
+        }
+    }
+    main {
+        /* 클릭시 맨위로 스크롤 부드럽게 이동 */
+        @media (max-width:940px) {
+            .toTop {
+                right: 40px;
+                width: 44px;
+            }
+        }
+        @media (min-width:1410) {
+            .main4Img {
+                display: block !important;
+            }
+        }
+        @media (min-width: 941px) { 
+            .rotate_arrow {
+                display: block !important;
+            }
+        }
+    }
+    /* footer */
+    @media (max-width:940px) {
+        footer {
+            .footer_inner {
+                width: 90%;
+                .footer_logo {
+                    justify-content: start;
+                }
+                .footer_link {
+                    justify-content: start;
+                    a {
+                        margin: 0;
+                    }
+                }
+                .footer_privacy {
+                    justify-content: start;
+                    span {
+                        margin: 0;
+                        margin-right: 20px;
+                    }
+                }
+                .footer_info {
+                    .info {
+                        width: 470px;
+                        flex-direction: column;
+                        align-items: unset;
+                        span {
+                            font-size: 14px;
+                            line-height: 14px;
+                            margin-bottom: 15px;
+                        }
+                        .line {
+                            margin: 1px 5px 0 5px;
+                            justify-content: center;
+                            align-items: unset;
+                        }
+                        /* 라인 지우기 */
+                        .Line_mo_none {
+                            display: none !important;
+                        }
+                        &:first-child {
+                            width: 100%;
+                            margin-bottom: 15px;
+                            span {
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                        &:last-child {
+                            .line {
+                                margin-top: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
