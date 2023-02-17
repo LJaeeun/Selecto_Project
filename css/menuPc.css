@@ -123,6 +123,59 @@ html, body {
 #wrapper main {
   /* 클릭시 맨위로 스크롤 부드럽게 이동 */
 }
+@media (max-width: 1550px) {
+  #wrapper main .main1 .main_inner .title {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+  #wrapper main .main1 .main_inner .container {
+    width: 80%;
+  }
+}
+@media (max-width: 1024px) {
+  #wrapper main .main1 .main_inner .title h2 {
+    font-size: 65px;
+    text-align: center;
+  }
+  #wrapper main .main1 .main_inner .title .menuTitle .titleBox a {
+    font-size: 19px;
+    padding-top: 4px;
+  }
+  #wrapper main .main1 .main_inner .container .menuList .lists {
+    width: calc((100% - 116px) / 3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: unset;
+    margin-left: 58px;
+    margin-top: 100px;
+  }
+  #wrapper main .main1 .main_inner .container .menuList .lists:first-child, #wrapper main .main1 .main_inner .container .menuList .lists:nth-child(2), #wrapper main .main1 .main_inner .container .menuList .lists:nth-child(3) {
+    margin-top: 0;
+  }
+  #wrapper main .main1 .main_inner .container .menuList .lists:nth-child(4n-3) {
+    margin-left: 58px;
+  }
+  #wrapper main .main1 .main_inner .container .menuList .lists:nth-child(3n-2) {
+    margin-left: 0;
+  }
+  #wrapper main .main1 .main_inner .container .menuList .lists .imgBox {
+    width: 180px;
+    height: 180px;
+  }
+  #wrapper main .main1 .main_inner .container .menuList .lists .imgBox .New {
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+  }
+  #wrapper main .main1 .main_inner .container .menuList .lists .infoTxt {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+}
 @media (max-width: 940px) {
   #wrapper main .toTop {
     right: 40px;

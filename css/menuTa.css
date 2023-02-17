@@ -63,6 +63,79 @@ html, body {
   /* footer 부분 개인정보취급방침 클릭시 팝업창 */
   /* 클릭시 맨위로 스크롤 부드럽게 이동 */
 }
+@media (max-width: 768px) {
+  #wrapper main .main1 .main_inner {
+    padding-top: 140px;
+    padding-bottom: 120px;
+  }
+  #wrapper main .main1 .main_inner .title h2 {
+    font-size: 50px;
+    margin-bottom: 60px;
+  }
+  #wrapper main .main1 .main_inner .title .menuTitle {
+    flex-direction: column;
+  }
+  #wrapper main .main1 .main_inner .title .menuTitle .titleBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #wrapper main .main1 .main_inner .title .menuTitle .titleBox:last-child {
+    margin-top: 20px;
+  }
+  #wrapper main .main1 .main_inner .title .menuTitle .titleBox a {
+    font-size: 16px;
+    margin: 0;
+    width: 105px;
+    text-align: center;
+    padding-bottom: 3px;
+    border-top: 0;
+    padding-top: 3px;
+    border-bottom: 1px solid var(--color-orange);
+  }
+  #wrapper main .main1 .main_inner .container .menuList .lists {
+    width: calc((100% - 20px) / 2) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 20px !important;
+    margin-top: 50px !important;
+  }
+  #wrapper main .main1 .main_inner .container .menuList .lists:nth-child(4n-3) {
+    margin-left: 20px;
+  }
+  #wrapper main .main1 .main_inner .container .menuList .lists:nth-child(3n-2) {
+    margin-left: 20px;
+  }
+  #wrapper main .main1 .main_inner .container .menuList .lists:nth-child(2), #wrapper main .main1 .main_inner .container .menuList .lists:first-child {
+    margin-top: 0 !important;
+  }
+  #wrapper main .main1 .main_inner .container .menuList .lists:nth-child(2n-1) {
+    margin-left: 0 !important;
+  }
+  #wrapper main .main1 .main_inner .container .menuList .lists .imgBox {
+    width: 125px;
+    height: 125px;
+  }
+  #wrapper main .main1 .main_inner .container .menuList .lists .infoTxt {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 500px) {
+  #wrapper main .main1 .main_inner .title h2 {
+    font-size: 40px;
+  }
+  #wrapper main .main1 .main_inner .container {
+    margin-top: 20px;
+  }
+  #wrapper main .main1 .main_inner .container .menuList .lists {
+    height: fit-content;
+  }
+}
 @media (max-width: 550px) {
   #wrapper main #privacyPopUp .popup_wrap .footer_popup .privacy_title2 {
     font-size: 12px;

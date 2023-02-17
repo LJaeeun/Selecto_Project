@@ -147,4 +147,6 @@
       menuPc.classList.remove('menuOver');
       btnLink.classList.remove('linkBtnOver');
     })
-  })();
+})();
+
+

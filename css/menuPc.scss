@@ -152,6 +152,80 @@ html, body {
         }
     }
     main {
+
+        @media (max-width:1550px) {
+            .main1 {
+                .main_inner {
+                    .title {
+                        width: 80%;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .container {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+        @media (max-width:1024px) {
+            .main1 {
+                .main_inner {
+                    .title {
+                        h2 {
+                            font-size: 65px;
+                            text-align: center;
+                        }
+                        .menuTitle {
+                            .titleBox {
+                                a {
+                                    font-size: 19px;
+                                    padding-top: 4px;
+                                }
+                            }
+                        }
+                    }
+                    .container {
+                        .menuList {
+                            .lists {
+                                width: calc((100% - (58px * 2)) / 3);
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                text-align: center;
+                                margin: unset;
+                                margin-left: 58px;
+                                margin-top: 100px;
+                                &:first-child, &:nth-child(2), &:nth-child(3) {
+                                    margin-top: 0;
+                                }
+                                &:nth-child(4n-3) {
+                                    margin-left: 58px;
+                                }
+                                &:nth-child(3n-2) {
+                                    margin-left: 0;
+                                }
+                                .imgBox {
+                                    width: 180px;
+                                    height: 180px;
+                                    .New {
+                                        width: 35px;
+                                        height: 35px;
+                                        font-size: 12px;
+                                    }
+                                }
+                                .infoTxt {
+                                    font-size: 18px;
+                                    margin-top: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
         /* 클릭시 맨위로 스크롤 부드럽게 이동 */
         @media (max-width:940px) {
             .toTop {
